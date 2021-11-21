@@ -1,0 +1,15 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "vueIndentScriptAndStyle": true,
+  "printWidth": 150,
+  "bracketSpacing": true,
+  "pugSortAttributes": "desc",
+  "pugEmptyAttributes": "none",
+  "pugAttributeSeparator": "none",
+  "pugTabWidth": 2,
+  "pugSingleQuote": "true",
+  "pugWrapAttributesThreshold": 2
+}

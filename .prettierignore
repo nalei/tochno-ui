@@ -1,0 +1,14 @@
+## file extensions
+*.*
++LICENSE
+!*.css
+!*.js
+!*.json
+!*.jsx
+!*.less
+!*.md
+!*.mdx
+!*.ts
+!*.tsx
+!*.yml
+!*.vue
