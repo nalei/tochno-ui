@@ -11,5 +11,6 @@
   "pugAttributeSeparator": "none",
   "pugTabWidth": 2,
   "pugSingleQuote": "true",
-  "pugWrapAttributesThreshold": 2
+  "pugWrapAttributesThreshold": 2,
+  "pugBracketSameLine": false
 }
