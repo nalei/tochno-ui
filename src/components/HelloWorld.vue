@@ -5,34 +5,40 @@ div
   a(
     target='_blank'
     rel='noopener'
-    href='https://cli.vuejs.org') vue-cli documentation
+    href='https://cli.vuejs.org'
+  ) vue-cli documentation
   h3 Installed CLI Plugins
   ul
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel') babel
+        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel'
+      ) babel
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router') router
+        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router'
+      ) router
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint') eslint
+        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint'
+      ) eslint
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest') unit-jest
+        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest'
+      ) unit-jest
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript') typescript
+        href='https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript'
+      ) typescript
 
   h3 Essential Links
   ul
@@ -40,27 +46,32 @@ div
       a(
         target='_blank'
         rel='noopener'
-        href='https://vuejs.org') Core Docs
+        href='https://vuejs.org'
+      ) Core Docs
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://forum.vuejs.org') Forum
+        href='https://forum.vuejs.org'
+      ) Forum
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://chat.vuejs.org') Community Chat
+        href='https://chat.vuejs.org'
+      ) Community Chat
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://twitter.com/vuejs') Twitter
+        href='https://twitter.com/vuejs'
+      ) Twitter
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://news.vuejs.org') News
+        href='https://news.vuejs.org'
+      ) News
 
   h3 Ecosystem
   ul
@@ -68,27 +79,32 @@ div
       a(
         target='_blank'
         rel='noopener'
-        href='https://router.vuejs.org') vue-router
+        href='https://router.vuejs.org'
+      ) vue-router
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://vuex.vuejs.org') vuex
+        href='https://vuex.vuejs.org'
+      ) vuex
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/vue-devtools#vue-devtools') vue-devtools
+        href='https://github.com/vuejs/vue-devtools#vue-devtools'
+      ) vue-devtools
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://vue-loader.vuejs.org') vue-loader
+        href='https://vue-loader.vuejs.org'
+      ) vue-loader
     li
       a(
         target='_blank'
         rel='noopener'
-        href='https://github.com/vuejs/awesome-vue') awesome-vue
+        href='https://github.com/vuejs/awesome-vue'
+      ) awesome-vue
 </template>
 
 <script lang="ts">
