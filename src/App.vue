@@ -18,4 +18,9 @@
     flex-grow: 1;
     flex-direction: column;
   }
+
+  @custom-media --viewport-xs (width <= 768px);
+  @custom-media --viewport-sm (width < 1280px);
+  @custom-media --viewport-md (width >= 1280px);
+  @custom-media --viewport-lg (width >= 1440px);
 </style>
