@@ -241,6 +241,12 @@ ul.menu-list(:class='menuListClasses')
           visibility: visible;
         }
       }
+
+      ::v-deep(.menu-list-item) {
+        &:focus {
+          background-color: transparent;
+        }
+      }
     }
 
     .marker {
