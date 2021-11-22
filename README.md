@@ -1,35 +1,41 @@
 # manage-web-ui
 
-## Project setup
+## Building
 
-```
+```bash
+# clone repo
+git clone https://gitlab.com/somersetinc/manage-web-ui.git
+
+# install dependencies
 yarn install
-```
 
-### Compiles and hot-reloads for development
-
-```
+# serve with hot reload at localhost:8080
 yarn serve
-```
 
-### Compiles and minifies for production
-
-```
+# build for production with minification
 yarn build
 ```
 
-### Run your unit tests
+## Linting & Formatting
 
-```
-yarn test:unit
-```
-
-### Lints and fixes files
-
-```
+```bash
+# Lint all files, fixing many violations automatically
 yarn lint
+
+# Formatting all files with Prettier
+yarn format
 ```
 
-### Customize configuration
+## Pre-commit
 
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Staged files are automatically linted and formatted before each commit. See lint-staged config in `package.json` to update.
+[Husky](https://github.com/typicode/husky) is used to install the pre-commit hook.
+
+## Icons/SVG:
+
+Set up yours svg icons in `/src-icons` folder.
+
+```bash
+# Generate new icons-sprite.svg from /src-icons folder
+yarn build:icons
+```
