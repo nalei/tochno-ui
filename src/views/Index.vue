@@ -1,13 +1,18 @@
 <template lang="pug">
-DefaultLayout
-  router-view
+Button.demo-button(size='l' mode='primary') Button
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import DefaultLayout from '@/layouts/DefaultLayout.vue';
+  import Button from '@/components/button/Button.vue';
 
   export default defineComponent({
-    components: { DefaultLayout },
+    components: { Button },
   });
 </script>
+
+<style scoped>
+  .demo-button {
+    max-width: 100px;
+  }
+</style>

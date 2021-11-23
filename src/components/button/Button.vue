@@ -1,19 +1,15 @@
 <template lang="pug">
 button.button(:type='$attrs.type || "button"' :class='buttonClasses')
-  span.button-content.caption-14px-medium(v-if='!iconOnly')
+  span.button-content.caption-14px-medium
     slot
-  Icon.button-icon(v-if='icon' v-bind='{ ...icon }')
 </template>
 
 <script lang="ts">
   import { defineComponent, PropType, computed } from 'vue';
-  import Icon from '../icon/Icon.vue';
   import { ButtonSize, ButtonMode } from './Button';
-  import { Icon as IconProps } from '../icon/Icon';
 
   export default defineComponent({
     name: 'Button',
-    components: { Icon },
     props: {
       size: {
         type: String as PropType<ButtonSize>,
@@ -31,15 +27,7 @@ button.button(:type='$attrs.type || "button"' :class='buttonClasses')
           return types.includes(type);
         },
       },
-      icon: {
-        type: Object as PropType<IconProps | null>,
-        default: null,
-      },
       loading: {
-        type: Boolean,
-        default: false,
-      },
-      iconOnly: {
         type: Boolean,
         default: false,
       },
@@ -47,10 +35,8 @@ button.button(:type='$attrs.type || "button"' :class='buttonClasses')
     setup(props) {
       const buttonClasses = computed(() => ({
         [`${props.size}`]: true,
-        'with-icon': props.icon,
         [`${props.mode}`]: props.mode !== 'primary',
         loading: props.loading,
-        'icon-only': props.iconOnly,
       }));
 
       return { buttonClasses };
