@@ -1,5 +1,1 @@
-export const ui = {
-  install: () => {
-    console.log('@tochno/ui - installation');
-  },
-};
+export { Button } from '@/components/button/Button';
