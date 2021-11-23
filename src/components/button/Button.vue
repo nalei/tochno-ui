@@ -7,9 +7,9 @@ button.button(:type='$attrs.type || "button"' :class='buttonClasses')
 
 <script lang="ts">
   import { defineComponent, PropType, computed } from 'vue';
-  import Icon from '@/components/icon/Icon.vue';
+  import Icon from '../icon/Icon.vue';
   import { ButtonSize, ButtonMode } from './Button';
-  import { Icon as IconProps } from '@/components/icon/Icon';
+  import { Icon as IconProps } from '../icon/Icon';
 
   export default defineComponent({
     name: 'Button',
