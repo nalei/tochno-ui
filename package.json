@@ -73,9 +73,18 @@
   ],
   "homepage": "https://tochno.pro",
   "license": "Commercial",
-  "main": "src/index.ts",
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
-  }
+  },
+  "main": "./dist/ui.umd.js",
+  "module": "./dist/ui.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/ui.es.js",
+      "require": "./dist/ui.umd.js"
+    }
+  },
+  "unpkg": "./dist/ui.umd.js",
+  "jsdelivr": "./dist/ui.umd.js"
 }
