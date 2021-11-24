@@ -6,8 +6,11 @@
   "keywords": [
     "vue3 web ui tochno"
   ],
-  "publishConfig": {
-    "@somersetinc:registry": "https://gitlab.com/api/v4/projects/31425999/packages/npm/"
+  "homepage": "https://tochno.pro",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -24,11 +27,9 @@
     "core-js": "^3.6.5",
     "htmlparser2": "^6.0.1",
     "maska": "^1.4.1",
+    "vue": "^3.2.22",
     "vue-router": "^4.0.0-0",
     "vuedraggable": "^4.0.1"
-  },
-  "peerDependencies": {
-    "vue": "^3.2.22"
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.17.3",
@@ -71,20 +72,6 @@
   "files": [
     "dist/*"
   ],
-  "homepage": "https://tochno.pro",
-  "license": "Commercial",
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
-  },
   "main": "./dist/ui.umd.js",
-  "module": "./dist/ui.es.js",
-  "exports": {
-    ".": {
-      "import": "./dist/ui.es.js",
-      "require": "./dist/ui.umd.js"
-    }
-  },
-  "unpkg": "./dist/ui.umd.js",
-  "jsdelivr": "./dist/ui.umd.js"
+  "module": "./dist/ui.es.js"
 }
