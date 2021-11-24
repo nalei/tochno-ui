@@ -24,9 +24,11 @@
     "core-js": "^3.6.5",
     "htmlparser2": "^6.0.1",
     "maska": "^1.4.1",
-    "vue": "^3.2.22",
     "vue-router": "^4.0.0-0",
     "vuedraggable": "^4.0.1"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.22"
   },
   "devDependencies": {
     "@prettier/plugin-pug": "^1.17.3",
@@ -67,14 +69,6 @@
     ]
   },
   "files": [
-    "src/assets/*",
-    "src/common/*",
-    "src/components/*",
-    "src/directives/*",
-    "src/layouts/*",
-    "src/utils/*",
-    "src/index.ts",
-    "src/shims-vue.d.ts",
     "dist/*"
   ],
   "homepage": "https://tochno.pro",
