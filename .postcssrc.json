@@ -3,8 +3,8 @@
     "postcss-nested": true,
     "postcss-custom-media": {},
     "postcss-preset-env": {
-        stage: 3,
-        browsers: '> 1%'
+        "stage": 3,
+        "browsers": "> 1%"
     }
   }
 }

@@ -39,3 +39,12 @@ Set up yours svg icons in `/src-icons` folder.
 # Generate new icons-sprite.svg from /src-icons folder
 yarn build:icons
 ```
+
+
+## Сборка библиотеки компонентов
+```bash
+npm run build:library
+
+# or
+npx vite build
+```
