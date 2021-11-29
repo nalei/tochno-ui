@@ -6,6 +6,7 @@ import { resolve } from 'path';
 export default defineConfig({
   plugins: [vue()],
   build: {
+    assetsDir: 'public',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ui',
@@ -21,6 +22,12 @@ export default defineConfig({
           vue: 'Vue',
         },
       },
+    },
+    minify: false,
+  },
+  resolve: {
+    alias: {
+      '@': resolve(__dirname, './src'),
     },
   },
 });
