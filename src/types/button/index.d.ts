@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { DefineComponent } from 'vue';
 
 export type ButtonSize = 's' | 'm' | 'l';
