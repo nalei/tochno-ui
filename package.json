@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "description": "Vue3 UI component library.",
   "author": "Somerset Inc. <hello@tochno.pro> (https://tochno.pro)",
+  "keywords": [
+    "vue3 web ui tochno"
+  ],
+  "publishConfig": {
+    "@somersetinc:registry": "https://gitlab.com/api/v4/projects/31425999/packages/npm/"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -54,14 +60,13 @@
     "vue-jest": "^5.0.0-0"
   },
   "files": [
-    "dist/*",
     "src/types/*"
   ],
   "homepage": "https://tochno.pro",
-  "license": "MIT",
-  "main": "./dist/ui.umd.js",
-  "module": "./dist/ui.es.js",
-  "types": "./src/types/types.d.ts",
+  "license": "Commercial",
+  "main": "dist/ui.umd.js",
+  "module": "dist/ui.es.js",
+  "types": "src/types/types.d.ts",
   "repository": {
     "type": "git",
     "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
