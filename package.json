@@ -1,13 +1,13 @@
 {
   "name": "@tochno/ui",
   "version": "0.0.1",
-  "description": "Vue3 UI component library.",
+  "description": "Vue3 UI components.",
   "author": "Somerset Inc. <hello@tochno.pro> (https://tochno.pro)",
-  "homepage": "https://tochno.pro",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
+  "keywords": [
+    "vue3 web ui tochno"
+  ],
+  "publishConfig": {
+    "@somersetinc:registry": "https://gitlab.com/api/v4/projects/31425999/packages/npm/"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -15,8 +15,8 @@
     "test:unit": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint --fix",
     "build:icons": "node scripts/generateSvgSprite.js && node scripts/creatIconNameList.js",
-    "build:library": "vite build",
-    "format": "prettier --write \"./**/*.*\""
+    "format": "prettier --write \"./**/*.*\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@popperjs/core": "^2.9.2",
@@ -32,7 +32,6 @@
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
-    "@vitejs/plugin-vue": "^1.10.0",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
@@ -53,13 +52,24 @@
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "svg-sprite": "^1.5.0",
-    "typescript": "~4.1.5",
-    "vite": "^2.6.14",
+    "typescript": "^4.2.4",
     "vue-jest": "^5.0.0-0"
   },
   "files": [
-    "dist/*"
+    "src/assets/*",
+    "src/common/*",
+    "src/components/*",
+    "src/directives/*",
+    "src/layouts/*",
+    "src/utils/*",
+    "src/index.ts",
+    "src/shims-vue.d.ts"
   ],
-  "main": "./dist/ui.umd.js",
-  "module": "./dist/ui.es.js"
+  "homepage": "https://tochno.pro",
+  "license": "Commercial",
+  "main": "src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
+  }
 }
