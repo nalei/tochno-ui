@@ -1,4 +1,4 @@
-import { DefineComponent } from "vue";
+import { DefineComponent, Directive } from "vue";
 
 export type TableRow = Record<string, unknown>;
 export type TableDataRow<T> = T & { checked: boolean; _id: number };
@@ -68,3 +68,4 @@ export const Table: DefineComponent;
 export const Tabs: DefineComponent;
 export const Textarea: DefineComponent;
 export const Timer: DefineComponent;
+export const Tooltip: Directive<any, any>;
