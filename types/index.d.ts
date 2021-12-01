@@ -1,4 +1,5 @@
 import { DefineComponent } from "vue";
+import TableDataSource from './TableDataSource'
 
 export const BottomBar: DefineComponent;
 export const FixedBottomBar: DefineComponent;
@@ -35,7 +36,7 @@ export const ProgressBar: DefineComponent;
 export const useProgressBar: any;
 export const Select: DefineComponent;
 export const Table: DefineComponent;
-export const TableDataSource: any;
+export const TableDataSource: TableDataSource;
 export const Tabs: DefineComponent;
 export const Textarea: DefineComponent;
 export const Timer: DefineComponent;
