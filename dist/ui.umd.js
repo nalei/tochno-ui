@@ -34,24 +34,28 @@ var __publicField = (obj, key, value) => {
   return value;
 };
 (function(global2, factory) {
-  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("vue")) : typeof define === "function" && define.amd ? define(["exports", "vue"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, factory(global2.ui = {}, global2.Vue));
-})(this, function(exports2, vue) {
+  typeof exports === "object" && typeof module !== "undefined" ? factory(exports, require("vue"), require("vuedraggable")) : typeof define === "function" && define.amd ? define(["exports", "vue", "vuedraggable"], factory) : (global2 = typeof globalThis !== "undefined" ? globalThis : global2 || self, factory(global2.ui = {}, global2.Vue, global2.Draggable));
+})(this, function(exports2, vue, Draggable) {
   "use strict";
+  function _interopDefaultLegacy(e2) {
+    return e2 && typeof e2 === "object" && "default" in e2 ? e2 : { "default": e2 };
+  }
+  var Draggable__default = /* @__PURE__ */ _interopDefaultLegacy(Draggable);
   var common = "";
-  const _hoisted_1$v = {
+  const _hoisted_1$w = {
     key: 0,
     class: "bottom-bar"
   };
-  const _hoisted_2$q = { class: "bottom-bar__title" };
-  const _hoisted_3$m = { class: "bottom-bar__buttons" };
-  function render$A(_ctx, _cache, $props, $setup, $data, $options) {
+  const _hoisted_2$r = { class: "bottom-bar__title" };
+  const _hoisted_3$n = { class: "bottom-bar__buttons" };
+  function render$B(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createBlock(vue.Transition, { name: "slide-top" }, {
       default: vue.withCtx(() => [
-        _ctx.opened ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$v, [
-          vue.createElementVNode("div", _hoisted_2$q, [
+        _ctx.opened ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$w, [
+          vue.createElementVNode("div", _hoisted_2$r, [
             vue.renderSlot(_ctx.$slots, "title", {}, void 0, true)
           ]),
-          vue.createElementVNode("div", _hoisted_3$m, [
+          vue.createElementVNode("div", _hoisted_3$n, [
             vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
           ])
         ])) : vue.createCommentVNode("", true)
@@ -67,7 +71,7 @@ var __publicField = (obj, key, value) => {
     }
     return target2;
   };
-  const _sfc_main$z = vue.defineComponent({
+  const _sfc_main$A = vue.defineComponent({
     name: "BottomBar",
     components: {},
     props: {
@@ -77,26 +81,26 @@ var __publicField = (obj, key, value) => {
       }
     }
   });
-  var BottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", render$A], ["__scopeId", "data-v-db06b442"]]);
-  const _withScopeId$3 = (n2) => (vue.pushScopeId("data-v-37a9e7e7"), n2 = n2(), vue.popScopeId(), n2);
-  const _hoisted_1$u = {
+  var BottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", render$B], ["__scopeId", "data-v-db06b442"]]);
+  const _withScopeId$4 = (n2) => (vue.pushScopeId("data-v-37a9e7e7"), n2 = n2(), vue.popScopeId(), n2);
+  const _hoisted_1$v = {
     class: "fixed-bottom-bar-anchor",
     ref: "bottomBarAnchorRef"
   };
-  const _hoisted_2$p = /* @__PURE__ */ _withScopeId$3(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "fixed-bottom-bar-holder" }, null, -1));
-  function render$z(_ctx, _cache, $props, $setup, $data, $options) {
+  const _hoisted_2$q = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "fixed-bottom-bar-holder" }, null, -1));
+  function render$A(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
-      vue.createElementVNode("div", _hoisted_1$u, null, 512),
+      vue.createElementVNode("div", _hoisted_1$v, null, 512),
       vue.createElementVNode("div", {
         class: vue.normalizeClass(["fixed-bottom-bar", _ctx.bottomBarClasses])
       }, [
         vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
       ], 2),
-      _hoisted_2$p
+      _hoisted_2$q
     ], 64);
   }
   var FixedBottomBar_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$y = vue.defineComponent({
+  const _sfc_main$z = vue.defineComponent({
     name: "FixedBottomBar",
     props: {
       isStick: {
@@ -122,7 +126,7 @@ var __publicField = (obj, key, value) => {
       return { bottomBarAnchorRef, bottomBarClasses };
     }
   });
-  var FixedBottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", render$z], ["__scopeId", "data-v-37a9e7e7"]]);
+  var FixedBottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", render$A], ["__scopeId", "data-v-37a9e7e7"]]);
   var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
   var lib$5 = {};
   var Parser$1 = {};
@@ -6609,7 +6613,7 @@ var __publicField = (obj, key, value) => {
     "track",
     "wbr"
   ]);
-  function render$y(node2, options) {
+  function render$z(node2, options) {
     if (options === void 0) {
       options = {};
     }
@@ -6620,11 +6624,11 @@ var __publicField = (obj, key, value) => {
     }
     return output;
   }
-  lib$1.default = render$y;
+  lib$1.default = render$z;
   function renderNode(node2, options) {
     switch (node2.type) {
       case ElementType.Root:
-        return render$y(node2.children, options);
+        return render$z(node2.children, options);
       case ElementType.Directive:
       case ElementType.Doctype:
         return renderDirective(node2);
@@ -6675,7 +6679,7 @@ var __publicField = (obj, key, value) => {
     } else {
       tag += ">";
       if (elem.children.length > 0) {
-        tag += render$y(elem.children, opts);
+        tag += render$z(elem.children, opts);
       }
       if (opts.xmlMode || !singleTag.has(elem.name)) {
         tag += "</" + elem.name + ">";
@@ -7664,12 +7668,12 @@ var __publicField = (obj, key, value) => {
       return FeedHandler_1.FeedHandler;
     } });
   })(lib$5);
-  const _hoisted_1$t = ["innerHTML"];
-  function render$x(_ctx, _cache, $props, $setup, $data, $options) {
+  const _hoisted_1$u = ["innerHTML"];
+  function render$y(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("svg", vue.mergeProps({
       class: "sui-icon",
       innerHTML: _ctx.svgContent
-    }, __spreadValues({ width: 0, height: 0 }, _ctx.svgAttrs), { style: _ctx.iconStyle }), null, 16, _hoisted_1$t);
+    }, __spreadValues({ width: 0, height: 0 }, _ctx.svgAttrs), { style: _ctx.iconStyle }), null, 16, _hoisted_1$u);
   }
   var Icon_vue_vue_type_style_index_0_lang = "";
   const PARSER_OPTIONS = {
@@ -7682,7 +7686,7 @@ var __publicField = (obj, key, value) => {
   const cacheMap = new Map();
   const parsedDocuments = new Map();
   const symbolsMap = new Map();
-  const _sfc_main$x = vue.defineComponent({
+  const _sfc_main$y = vue.defineComponent({
     name: "Icon",
     props: {
       spriteUrl: {
@@ -7805,12 +7809,12 @@ var __publicField = (obj, key, value) => {
       loadSprites
     };
   }
-  var Icon = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", render$x]]);
-  const _hoisted_1$s = { class: "breadcrumbs" };
-  function render$w(_ctx, _cache, $props, $setup, $data, $options) {
+  var Icon = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", render$y]]);
+  const _hoisted_1$t = { class: "breadcrumbs" };
+  function render$x(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Icon = vue.resolveComponent("Icon");
     return vue.openBlock(), vue.createElementBlock("nav", null, [
-      vue.createElementVNode("ul", _hoisted_1$s, [
+      vue.createElementVNode("ul", _hoisted_1$t, [
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.crumbs, (crumb, i2) => {
           return vue.openBlock(), vue.createElementBlock("li", {
             class: vue.normalizeClass(["crumb", { "last-child": _ctx.crumbs.length === i2 + 1 }]),
@@ -7835,7 +7839,7 @@ var __publicField = (obj, key, value) => {
     ]);
   }
   var Breadcrumbs_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$w = vue.defineComponent({
+  const _sfc_main$x = vue.defineComponent({
     name: "Breadcrumbs",
     components: { Icon },
     props: {
@@ -7845,29 +7849,29 @@ var __publicField = (obj, key, value) => {
       }
     }
   });
-  var Breadcrumbs = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", render$w], ["__scopeId", "data-v-414c9d3d"]]);
-  const _hoisted_1$r = ["type"];
-  const _hoisted_2$o = {
+  var Breadcrumbs = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", render$x], ["__scopeId", "data-v-414c9d3d"]]);
+  const _hoisted_1$s = ["type"];
+  const _hoisted_2$p = {
     key: 0,
     class: "button-content caption-14px-medium"
   };
-  function render$v(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$w(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Icon = vue.resolveComponent("Icon");
     return vue.openBlock(), vue.createElementBlock("button", {
       class: vue.normalizeClass(["button", _ctx.buttonClasses]),
       type: _ctx.$attrs.type || "button"
     }, [
-      !_ctx.iconOnly ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$o, [
+      !_ctx.iconOnly ? (vue.openBlock(), vue.createElementBlock("span", _hoisted_2$p, [
         vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
       ])) : vue.createCommentVNode("", true),
       _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_Icon, vue.mergeProps({
         key: 1,
         class: "button-icon"
       }, __spreadValues({}, _ctx.icon)), null, 16)) : vue.createCommentVNode("", true)
-    ], 10, _hoisted_1$r);
+    ], 10, _hoisted_1$s);
   }
   var Button_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$v = vue.defineComponent({
+  const _sfc_main$w = vue.defineComponent({
     name: "Button",
     components: { Icon },
     props: {
@@ -7911,31 +7915,31 @@ var __publicField = (obj, key, value) => {
       return { buttonClasses };
     }
   });
-  var Button = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", render$v], ["__scopeId", "data-v-3a157fa3"]]);
-  const _hoisted_1$q = {
+  var Button = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", render$w], ["__scopeId", "data-v-3a157fa3"]]);
+  const _hoisted_1$r = {
     key: 0,
     class: "card-sidebar"
   };
-  const _hoisted_2$n = { class: "step-number h-500" };
-  const _hoisted_3$l = { class: "card-content" };
-  const _hoisted_4$g = { class: "card-header" };
-  const _hoisted_5$d = {
+  const _hoisted_2$o = { class: "step-number h-500" };
+  const _hoisted_3$m = { class: "card-content" };
+  const _hoisted_4$h = { class: "card-header" };
+  const _hoisted_5$e = {
     key: 0,
     class: "card-title h-500"
   };
-  const _hoisted_6$2 = { class: "card-actions" };
+  const _hoisted_6$3 = { class: "card-actions" };
   const _hoisted_7$1 = { class: "card-description text-14px-regular" };
-  function render$u(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$v(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(["card", _ctx.cardClasses])
     }, [
-      _ctx.number ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$q, [
-        vue.createElementVNode("span", _hoisted_2$n, vue.toDisplayString(_ctx.number), 1)
+      _ctx.number ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_1$r, [
+        vue.createElementVNode("span", _hoisted_2$o, vue.toDisplayString(_ctx.number), 1)
       ])) : vue.createCommentVNode("", true),
-      vue.createElementVNode("div", _hoisted_3$l, [
-        vue.createElementVNode("div", _hoisted_4$g, [
-          _ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5$d, vue.toDisplayString(_ctx.title), 1)) : vue.createCommentVNode("", true),
-          vue.createElementVNode("div", _hoisted_6$2, [
+      vue.createElementVNode("div", _hoisted_3$m, [
+        vue.createElementVNode("div", _hoisted_4$h, [
+          _ctx.title ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_5$e, vue.toDisplayString(_ctx.title), 1)) : vue.createCommentVNode("", true),
+          vue.createElementVNode("div", _hoisted_6$3, [
             vue.renderSlot(_ctx.$slots, "actions", {}, void 0, true)
           ]),
           vue.createElementVNode("div", _hoisted_7$1, [
@@ -7947,7 +7951,7 @@ var __publicField = (obj, key, value) => {
     ], 2);
   }
   var Card_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$u = vue.defineComponent({
+  const _sfc_main$v = vue.defineComponent({
     name: "Card",
     props: {
       title: {
@@ -7976,13 +7980,13 @@ var __publicField = (obj, key, value) => {
       return { cardClasses };
     }
   });
-  var Card = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", render$u], ["__scopeId", "data-v-5bba588c"]]);
-  const _hoisted_1$p = ["for"];
-  const _hoisted_2$m = ["value", "id", "disabled"];
-  const _hoisted_3$k = ["for"];
-  const _hoisted_4$f = ["src"];
-  const _hoisted_5$c = { class: "indeterminate-dash" };
-  function render$t(_ctx, _cache, $props, $setup, $data, $options) {
+  var Card = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", render$v], ["__scopeId", "data-v-5bba588c"]]);
+  const _hoisted_1$q = ["for"];
+  const _hoisted_2$n = ["value", "id", "disabled"];
+  const _hoisted_3$l = ["for"];
+  const _hoisted_4$g = ["src"];
+  const _hoisted_5$d = { class: "indeterminate-dash" };
+  function render$u(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createElementBlock("div", {
       class: vue.normalizeClass(["checkbox", _ctx.boxClass])
     }, [
@@ -7990,7 +7994,7 @@ var __publicField = (obj, key, value) => {
         key: 0,
         class: vue.normalizeClass(["label", _ctx.labelClass]),
         for: _ctx.id
-      }, vue.toDisplayString(_ctx.label), 11, _hoisted_1$p)) : vue.createCommentVNode("", true),
+      }, vue.toDisplayString(_ctx.label), 11, _hoisted_1$q)) : vue.createCommentVNode("", true),
       vue.createElementVNode("input", {
         class: "hidden",
         type: "checkbox",
@@ -8000,7 +8004,7 @@ var __publicField = (obj, key, value) => {
         value: _ctx.modelValue,
         id: _ctx.id,
         disabled: _ctx.disabled
-      }, null, 40, _hoisted_2$m),
+      }, null, 40, _hoisted_2$n),
       vue.createElementVNode("label", {
         class: vue.normalizeClass(["box", _ctx.boxClass]),
         tabindex: "-1",
@@ -8009,13 +8013,13 @@ var __publicField = (obj, key, value) => {
         vue.withDirectives(vue.createElementVNode("img", {
           class: "icon",
           src: _ctx.imgSrc
-        }, null, 8, _hoisted_4$f), [
+        }, null, 8, _hoisted_4$g), [
           [vue.vShow, !_ctx.indeterminate && _ctx.modelValue]
         ]),
-        vue.withDirectives(vue.createElementVNode("div", _hoisted_5$c, null, 512), [
+        vue.withDirectives(vue.createElementVNode("div", _hoisted_5$d, null, 512), [
           [vue.vShow, _ctx.indeterminate]
         ])
-      ], 10, _hoisted_3$k),
+      ], 10, _hoisted_3$l),
       _ctx.error || _ctx.caption ? (vue.openBlock(), vue.createElementBlock("div", {
         key: 1,
         class: vue.normalizeClass(["caption", _ctx.captionClass])
@@ -8023,7 +8027,7 @@ var __publicField = (obj, key, value) => {
     ], 2);
   }
   var Checkbox_vue_vue_type_style_index_0_lang = "";
-  const _sfc_main$t = vue.defineComponent({
+  const _sfc_main$u = vue.defineComponent({
     name: "Checkbox",
     inheritAttrs: false,
     emits: ["update:modelValue"],
@@ -8100,36 +8104,36 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var Checkbox = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", render$t]]);
-  const _withScopeId$2 = (n2) => (vue.pushScopeId("data-v-7ef9b904"), n2 = n2(), vue.popScopeId(), n2);
-  const _hoisted_1$o = ["tabindex"];
-  const _hoisted_2$l = { class: "option-content" };
-  const _hoisted_3$j = { class: "option-label" };
-  const _hoisted_4$e = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "break" }, null, -1));
-  const _hoisted_5$b = {
+  var Checkbox = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", render$u]]);
+  const _withScopeId$3 = (n2) => (vue.pushScopeId("data-v-7ef9b904"), n2 = n2(), vue.popScopeId(), n2);
+  const _hoisted_1$p = ["tabindex"];
+  const _hoisted_2$m = { class: "option-content" };
+  const _hoisted_3$k = { class: "option-label" };
+  const _hoisted_4$f = /* @__PURE__ */ _withScopeId$3(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "break" }, null, -1));
+  const _hoisted_5$c = {
     key: 1,
     class: "option-subtitle caption-10px-medium"
   };
-  function render$s(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$t(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Icon = vue.resolveComponent("Icon");
     return vue.openBlock(), vue.createElementBlock("li", {
       class: vue.normalizeClass(["dropdown-option text-14px-regular", _ctx.optionClasses]),
       tabindex: _ctx.tabindex
     }, [
-      vue.createElementVNode("div", _hoisted_2$l, [
+      vue.createElementVNode("div", _hoisted_2$m, [
         _ctx.icon ? (vue.openBlock(), vue.createBlock(_component_Icon, vue.mergeProps({
           key: 0,
           class: "option-icon"
         }, _ctx.icon), null, 16)) : vue.createCommentVNode("", true),
-        vue.createElementVNode("span", _hoisted_3$j, vue.toDisplayString(_ctx.label), 1),
-        _hoisted_4$e,
-        _ctx.subtitle ? (vue.openBlock(), vue.createElementBlock("small", _hoisted_5$b, vue.toDisplayString(_ctx.subtitle), 1)) : vue.createCommentVNode("", true)
+        vue.createElementVNode("span", _hoisted_3$k, vue.toDisplayString(_ctx.label), 1),
+        _hoisted_4$f,
+        _ctx.subtitle ? (vue.openBlock(), vue.createElementBlock("small", _hoisted_5$c, vue.toDisplayString(_ctx.subtitle), 1)) : vue.createCommentVNode("", true)
       ]),
       vue.renderSlot(_ctx.$slots, "control", {}, void 0, true)
-    ], 10, _hoisted_1$o);
+    ], 10, _hoisted_1$p);
   }
   var DropdownOption_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$s = vue.defineComponent({
+  const _sfc_main$t = vue.defineComponent({
     name: "DropdownOption",
     components: { Icon },
     props: {
@@ -8169,18 +8173,18 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var DropdownOption = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", render$s], ["__scopeId", "data-v-7ef9b904"]]);
-  const _hoisted_1$n = {
+  var DropdownOption = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", render$t], ["__scopeId", "data-v-7ef9b904"]]);
+  const _hoisted_1$o = {
     key: 0,
     class: "options"
   };
-  const _hoisted_2$k = {
+  const _hoisted_2$l = {
     key: 1,
     class: "no-results"
   };
-  const _hoisted_3$i = { class: "no-results-title caption-16px-medium" };
-  const _hoisted_4$d = { class: "no-results-description text-12px-regular" };
-  function render$r(_ctx, _cache, $props, $setup, $data, $options) {
+  const _hoisted_3$j = { class: "no-results-title caption-16px-medium" };
+  const _hoisted_4$e = { class: "no-results-description text-12px-regular" };
+  function render$s(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_DropdownOption = vue.resolveComponent("DropdownOption");
     const _component_Icon = vue.resolveComponent("Icon");
     return vue.withDirectives((vue.openBlock(), vue.createElementBlock("div", {
@@ -8188,7 +8192,7 @@ var __publicField = (obj, key, value) => {
       style: vue.normalizeStyle(_ctx.dropdownStyles)
     }, [
       vue.renderSlot(_ctx.$slots, "header", {}, void 0, true),
-      !_ctx.noResults ? (vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$n, [
+      !_ctx.noResults ? (vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$o, [
         (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.options, (option, index) => {
           var _a;
           return vue.openBlock(), vue.createBlock(_component_DropdownOption, vue.mergeProps(option, {
@@ -8207,14 +8211,14 @@ var __publicField = (obj, key, value) => {
           }, 1040, ["onKeypress", "onClick", "active"]);
         }), 128)),
         vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
-      ])) : vue.withDirectives((vue.openBlock(), vue.createElementBlock("div", _hoisted_2$k, [
+      ])) : vue.withDirectives((vue.openBlock(), vue.createElementBlock("div", _hoisted_2$l, [
         vue.createVNode(_component_Icon, {
           class: "no-results-icon",
           name: "ic24-search",
           color: "--blue-500"
         }),
-        vue.createElementVNode("h4", _hoisted_3$i, vue.toDisplayString(_ctx.dropdownDictionary.noResultsTitle), 1),
-        vue.createElementVNode("p", _hoisted_4$d, vue.toDisplayString(_ctx.dropdownDictionary.noResultsDescription), 1)
+        vue.createElementVNode("h4", _hoisted_3$j, vue.toDisplayString(_ctx.dropdownDictionary.noResultsTitle), 1),
+        vue.createElementVNode("p", _hoisted_4$e, vue.toDisplayString(_ctx.dropdownDictionary.noResultsDescription), 1)
       ], 512)), [
         [vue.vShow, _ctx.opened]
       ])
@@ -8227,7 +8231,7 @@ var __publicField = (obj, key, value) => {
     noResultsTitle: "No matching search results",
     noResultsDescription: "Try again using more general search terms"
   };
-  const _sfc_main$r = vue.defineComponent({
+  const _sfc_main$s = vue.defineComponent({
     name: "Dropdown",
     components: {
       DropdownOption,
@@ -8282,37 +8286,37 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var Dropdown = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", render$r], ["__scopeId", "data-v-3170e559"]]);
-  const _hoisted_1$m = { class: "file-wrapper" };
-  const _hoisted_2$j = ["disabled"];
-  const _hoisted_3$h = {
+  var Dropdown = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", render$s], ["__scopeId", "data-v-3170e559"]]);
+  const _hoisted_1$n = { class: "file-wrapper" };
+  const _hoisted_2$k = ["disabled"];
+  const _hoisted_3$i = {
     key: 0,
     class: "file-label text-13px-regular loaded"
   };
-  const _hoisted_4$c = {
+  const _hoisted_4$d = {
     key: 1,
     class: "file-label text-13px-medium"
   };
-  const _hoisted_5$a = /* @__PURE__ */ vue.createTextVNode("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C");
-  function render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  const _hoisted_5$b = /* @__PURE__ */ vue.createTextVNode("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C");
+  function render$r(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Icon = vue.resolveComponent("Icon");
-    return vue.openBlock(), vue.createElementBlock("label", _hoisted_1$m, [
+    return vue.openBlock(), vue.createElementBlock("label", _hoisted_1$n, [
       vue.createElementVNode("input", vue.mergeProps({ class: "file-input" }, _ctx.$attrs, {
         type: "file",
         onChange: _cache[0] || (_cache[0] = (...args) => _ctx.onChangeFile && _ctx.onChangeFile(...args)),
         disabled: _ctx.disabled
-      }), null, 16, _hoisted_2$j),
-      _ctx.file || _ctx.fileName ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$h, [
+      }), null, 16, _hoisted_2$k),
+      _ctx.file || _ctx.fileName ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$i, [
         vue.createVNode(_component_Icon, { name: "ic24-file" }),
         vue.createTextVNode(vue.toDisplayString(_ctx.name), 1)
-      ])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$c, [
+      ])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$d, [
         vue.createVNode(_component_Icon, { name: "ic24-file-import" }),
-        _hoisted_5$a
+        _hoisted_5$b
       ]))
     ]);
   }
   var FileUpload_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$q = vue.defineComponent({
+  const _sfc_main$r = vue.defineComponent({
     name: "FileUpload",
     components: { Icon },
     props: {
@@ -8353,18 +8357,18 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var FileUpload = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", render$q], ["__scopeId", "data-v-a39a15b0"]]);
-  const _hoisted_1$l = { class: "sticky-wrapper" };
-  const _hoisted_2$i = { class: "filters" };
-  function render$p(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$l, [
-      vue.createElementVNode("div", _hoisted_2$i, [
+  var FileUpload = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", render$r], ["__scopeId", "data-v-a39a15b0"]]);
+  const _hoisted_1$m = { class: "sticky-wrapper" };
+  const _hoisted_2$j = { class: "filters" };
+  function render$q(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$m, [
+      vue.createElementVNode("div", _hoisted_2$j, [
         vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
       ])
     ]);
   }
   var Filters_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$p = vue.defineComponent({
+  const _sfc_main$q = vue.defineComponent({
     name: "Filters",
     setup() {
       vue.onMounted(() => {
@@ -8377,7 +8381,7 @@ var __publicField = (obj, key, value) => {
       return {};
     }
   });
-  var Filters = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", render$p], ["__scopeId", "data-v-fd1a5c78"]]);
+  var Filters = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", render$q], ["__scopeId", "data-v-fd1a5c78"]]);
   /*!
    * maska v1.5.0
    * (c) 2019-2021 Alexander Shabunevich
@@ -8545,22 +8549,22 @@ var __publicField = (obj, key, value) => {
     e2.directive("maska", h);
   }
   typeof window != "undefined" && window.Vue && window.Vue.use && window.Vue.use(k);
-  const _hoisted_1$k = { class: "input-wrapper" };
-  const _hoisted_2$h = ["for"];
-  const _hoisted_3$g = ["placeholder", "id", "disabled"];
-  const _hoisted_4$b = {
+  const _hoisted_1$l = { class: "input-wrapper" };
+  const _hoisted_2$i = ["for"];
+  const _hoisted_3$h = ["placeholder", "id", "disabled"];
+  const _hoisted_4$c = {
     key: 1,
     class: "input-icon"
   };
-  function render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$p(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_Icon = vue.resolveComponent("Icon");
     const _directive_maska = vue.resolveDirective("maska");
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$k, [
+    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$l, [
       _ctx.label ? (vue.openBlock(), vue.createElementBlock("label", {
         key: 0,
         class: vue.normalizeClass(["label caption-13px-medium", _ctx.labelClass]),
         for: _ctx.id
-      }, vue.toDisplayString(_ctx.label), 11, _hoisted_2$h)) : vue.createCommentVNode("", true),
+      }, vue.toDisplayString(_ctx.label), 11, _hoisted_2$i)) : vue.createCommentVNode("", true),
       vue.createElementVNode("div", {
         class: vue.normalizeClass(["input-box", _ctx.boxClass])
       }, [
@@ -8579,7 +8583,7 @@ var __publicField = (obj, key, value) => {
           id: _ctx.id,
           disabled: _ctx.disabled,
           class: _ctx.inputClass
-        }), null, 16, _hoisted_3$g), [
+        }), null, 16, _hoisted_3$h), [
           [vue.vModelDynamic, _ctx.message],
           [_directive_maska, _ctx.mask]
         ]),
@@ -8587,7 +8591,7 @@ var __publicField = (obj, key, value) => {
           key: 0,
           class: vue.normalizeClass(["input-badge text-14px-regular", _ctx.badgeClass])
         }, vue.toDisplayString(_ctx.badge), 3)) : vue.createCommentVNode("", true),
-        _ctx.icon ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$b, [
+        _ctx.icon ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$c, [
           vue.createVNode(_component_Icon, vue.mergeProps(__spreadProps(__spreadValues({}, _ctx.icon), { color: _ctx.isFocused ? "--blue-500" : "--gray-500" }), { onClick: _ctx.handleIconClick }), null, 16, ["onClick"])
         ])) : vue.createCommentVNode("", true)
       ], 2),
@@ -8598,7 +8602,7 @@ var __publicField = (obj, key, value) => {
     ]);
   }
   var Input_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$o = vue.defineComponent({
+  const _sfc_main$p = vue.defineComponent({
     name: "Input",
     components: { Icon },
     directives: { maska: h },
@@ -8735,51 +8739,51 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var Input = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", render$o], ["__scopeId", "data-v-ee702acc"]]);
-  const _hoisted_1$j = { class: "page" };
-  const _hoisted_2$g = { class: "page-body" };
-  const _hoisted_3$f = { class: "page-main" };
-  function render$n(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$j, [
-      vue.createElementVNode("div", _hoisted_2$g, [
+  var Input = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", render$p], ["__scopeId", "data-v-ee702acc"]]);
+  const _hoisted_1$k = { class: "page" };
+  const _hoisted_2$h = { class: "page-body" };
+  const _hoisted_3$g = { class: "page-main" };
+  function render$o(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$k, [
+      vue.createElementVNode("div", _hoisted_2$h, [
         vue.renderSlot(_ctx.$slots, "sidebar", { class: "page-sidebar" }, void 0, true),
-        vue.createElementVNode("main", _hoisted_3$f, [
+        vue.createElementVNode("main", _hoisted_3$g, [
           vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
         ])
       ])
     ]);
   }
   var PageShell_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$n = vue.defineComponent({
+  const _sfc_main$o = vue.defineComponent({
     name: "PageShell"
   });
-  var PageShell = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", render$n], ["__scopeId", "data-v-a8685f58"]]);
-  const _withScopeId$1 = (n2) => (vue.pushScopeId("data-v-a91ed458"), n2 = n2(), vue.popScopeId(), n2);
-  const _hoisted_1$i = { class: "page-sidebar" };
-  const _hoisted_2$f = { class: "sidebar-header" };
-  const _hoisted_3$e = { class: "sidebar-body" };
-  const _hoisted_4$a = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "flexspace" }, null, -1));
-  const _hoisted_5$9 = { class: "sidebar-footer" };
-  function render$m(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$i, [
-      vue.createElementVNode("div", _hoisted_2$f, [
+  var PageShell = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", render$o], ["__scopeId", "data-v-a8685f58"]]);
+  const _withScopeId$2 = (n2) => (vue.pushScopeId("data-v-a91ed458"), n2 = n2(), vue.popScopeId(), n2);
+  const _hoisted_1$j = { class: "page-sidebar" };
+  const _hoisted_2$g = { class: "sidebar-header" };
+  const _hoisted_3$f = { class: "sidebar-body" };
+  const _hoisted_4$b = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "flexspace" }, null, -1));
+  const _hoisted_5$a = { class: "sidebar-footer" };
+  function render$n(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$j, [
+      vue.createElementVNode("div", _hoisted_2$g, [
         vue.renderSlot(_ctx.$slots, "header", {}, void 0, true)
       ]),
-      vue.createElementVNode("div", _hoisted_3$e, [
+      vue.createElementVNode("div", _hoisted_3$f, [
         vue.renderSlot(_ctx.$slots, "default", {}, void 0, true)
       ]),
-      _hoisted_4$a,
-      vue.createElementVNode("div", _hoisted_5$9, [
+      _hoisted_4$b,
+      vue.createElementVNode("div", _hoisted_5$a, [
         vue.renderSlot(_ctx.$slots, "footer", {}, void 0, true)
       ])
     ]);
   }
   var PageSidebar_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$m = vue.defineComponent({
+  const _sfc_main$n = vue.defineComponent({
     name: "PageSidebar"
   });
-  var PageSidebar = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", render$m], ["__scopeId", "data-v-a91ed458"]]);
-  function render$l(_ctx, _cache, $props, $setup, $data, $options) {
+  var PageSidebar = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", render$n], ["__scopeId", "data-v-a91ed458"]]);
+  function render$m(_ctx, _cache, $props, $setup, $data, $options) {
     return vue.openBlock(), vue.createBlock(vue.Transition, {
       name: "expand",
       onLeave: _ctx.leave,
@@ -8793,7 +8797,7 @@ var __publicField = (obj, key, value) => {
     }, 8, ["onLeave", "onEnter", "onAfterEnter"]);
   }
   var TransitionExpand_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$l = vue.defineComponent({
+  const _sfc_main$m = vue.defineComponent({
     name: "TransitionExpand",
     methods: {
       enter(element) {
@@ -8825,10 +8829,10 @@ var __publicField = (obj, key, value) => {
       }
     }
   });
-  var TransitionExpand = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", render$l], ["__scopeId", "data-v-2980aab9"]]);
-  const _hoisted_1$h = { class: "list" };
-  function render$k(_ctx, _cache, $props, $setup, $data, $options) {
-    return vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$h, [
+  var TransitionExpand = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", render$m], ["__scopeId", "data-v-2980aab9"]]);
+  const _hoisted_1$i = { class: "list" };
+  function render$l(_ctx, _cache, $props, $setup, $data, $options) {
+    return vue.openBlock(), vue.createElementBlock("ul", _hoisted_1$i, [
       (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(_ctx.data, (item, index) => {
         return vue.openBlock(), vue.createElementBlock("li", {
           class: "list-item text-14px-regular",
@@ -8843,7 +8847,7 @@ var __publicField = (obj, key, value) => {
     ]);
   }
   var List_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$k = vue.defineComponent({
+  const _sfc_main$l = vue.defineComponent({
     name: "List",
     props: {
       data: {
@@ -8853,29 +8857,29 @@ var __publicField = (obj, key, value) => {
       }
     }
   });
-  var List = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", render$k], ["__scopeId", "data-v-3941fc9e"]]);
-  const _hoisted_1$g = { class: "grid grid_gap_16" };
-  const _hoisted_2$e = { class: "grid-12-12" };
-  const _hoisted_3$d = {
+  var List = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", render$l], ["__scopeId", "data-v-3941fc9e"]]);
+  const _hoisted_1$h = { class: "grid grid_gap_16" };
+  const _hoisted_2$f = { class: "grid-12-12" };
+  const _hoisted_3$e = {
     key: 0,
     class: "label caption-13px-medium"
   };
-  const _hoisted_4$9 = {
+  const _hoisted_4$a = {
     key: 2,
     class: "options-more-wrap"
   };
-  const _hoisted_5$8 = { class: "options-more__label caption-13px-medium" };
-  const _hoisted_6$1 = {
+  const _hoisted_5$9 = { class: "options-more__label caption-13px-medium" };
+  const _hoisted_6$2 = {
     key: 3,
     class: "options-more-holder"
   };
-  function render$j(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$k(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_List = vue.resolveComponent("List");
     const _component_TransitionExpand = vue.resolveComponent("TransitionExpand");
     const _component_Icon = vue.resolveComponent("Icon");
-    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$g, [
-      vue.createElementVNode("div", _hoisted_2$e, [
-        _ctx.label ? (vue.openBlock(), vue.createElementBlock("label", _hoisted_3$d, vue.toDisplayString(_ctx.label), 1)) : vue.createCommentVNode("", true),
+    return vue.openBlock(), vue.createElementBlock("div", _hoisted_1$h, [
+      vue.createElementVNode("div", _hoisted_2$f, [
+        _ctx.label ? (vue.openBlock(), vue.createElementBlock("label", _hoisted_3$e, vue.toDisplayString(_ctx.label), 1)) : vue.createCommentVNode("", true),
         vue.createVNode(_component_List, {
           data: _ctx.list.initial,
           class: vue.normalizeClass({ "list-expanded": _ctx.isShowAll })
@@ -8907,12 +8911,12 @@ var __publicField = (obj, key, value) => {
           ]),
           _: 3
         })) : vue.createCommentVNode("", true),
-        _ctx.list.rest.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$9, [
+        _ctx.list.rest.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_4$a, [
           vue.createElementVNode("div", {
             class: "options-more",
             onClick: _cache[0] || (_cache[0] = (...args) => _ctx.onShowAll && _ctx.onShowAll(...args))
           }, [
-            vue.createElementVNode("div", _hoisted_5$8, vue.toDisplayString(_ctx.showAllLabel), 1),
+            vue.createElementVNode("div", _hoisted_5$9, vue.toDisplayString(_ctx.showAllLabel), 1),
             vue.createElementVNode("div", {
               class: vue.normalizeClass(["options-more__icon", { "options-more__icon_opened": _ctx.isShowAll }])
             }, [
@@ -8922,12 +8926,12 @@ var __publicField = (obj, key, value) => {
               })
             ], 2)
           ])
-        ])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$1))
+        ])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_6$2))
       ])
     ]);
   }
   var ExpansibleList_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$j = vue.defineComponent({
+  const _sfc_main$k = vue.defineComponent({
     name: "ExpansibleList",
     components: { Input, Icon, TransitionExpand, List },
     props: {
@@ -8988,29 +8992,29 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var ExpansibleList = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", render$j], ["__scopeId", "data-v-dd7d521c"]]);
-  const _hoisted_1$f = {
+  var ExpansibleList = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", render$k], ["__scopeId", "data-v-dd7d521c"]]);
+  const _hoisted_1$g = {
     key: 0,
     class: "label caption-13px-medium"
   };
-  const _hoisted_2$d = {
+  const _hoisted_2$e = {
     key: 1,
     class: "wrap-rest"
   };
-  const _hoisted_3$c = {
+  const _hoisted_3$d = {
     key: 2,
     class: "options-more-wrap"
   };
-  const _hoisted_4$8 = { class: "options-more__label caption-13px-medium" };
-  const _hoisted_5$7 = {
+  const _hoisted_4$9 = { class: "options-more__label caption-13px-medium" };
+  const _hoisted_5$8 = {
     key: 3,
     class: "options-more-holder"
   };
-  function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  function render$j(_ctx, _cache, $props, $setup, $data, $options) {
     const _component_TransitionExpand = vue.resolveComponent("TransitionExpand");
     const _component_Icon = vue.resolveComponent("Icon");
     return vue.openBlock(), vue.createElementBlock(vue.Fragment, null, [
-      _ctx.label ? (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$f, vue.toDisplayString(_ctx.label), 1)) : vue.createCommentVNode("", true),
+      _ctx.label ? (vue.openBlock(), vue.createElementBlock("label", _hoisted_1$g, vue.toDisplayString(_ctx.label), 1)) : vue.createCommentVNode("", true),
       vue.createElementVNode("div", {
         class: vue.normalizeClass(["wrap-initial", { expanded: _ctx.isShowAll }])
       }, [
@@ -9022,7 +9026,7 @@ var __publicField = (obj, key, value) => {
           }, void 0, true);
         }), 128))
       ], 2),
-      _ctx.list.rest.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$d, [
+      _ctx.list.rest.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_2$e, [
         vue.createVNode(_component_TransitionExpand, null, {
           default: vue.withCtx(() => [
             vue.withDirectives(vue.createElementVNode("div", null, [
@@ -9040,12 +9044,12 @@ var __publicField = (obj, key, value) => {
           _: 3
         })
       ])) : vue.createCommentVNode("", true),
-      _ctx.list.rest.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$c, [
+      _ctx.list.rest.length ? (vue.openBlock(), vue.createElementBlock("div", _hoisted_3$d, [
         vue.createElementVNode("div", {
           class: "options-more",
           onClick: _cache[0] || (_cache[0] = (...args) => _ctx.onShowAll && _ctx.onShowAll(...args))
         }, [
-          vue.createElementVNode("div", _hoisted_4$8, vue.toDisplayString(_ctx.showAllLabel), 1),
+          vue.createElementVNode("div", _hoisted_4$9, vue.toDisplayString(_ctx.showAllLabel), 1),
           vue.createElementVNode("div", {
             class: vue.normalizeClass(["options-more__icon", { "options-more__icon_opened": _ctx.isShowAll }])
           }, [
@@ -9055,11 +9059,11 @@ var __publicField = (obj, key, value) => {
             })
           ], 2)
         ])
-      ])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_5$7))
+      ])) : (vue.openBlock(), vue.createElementBlock("div", _hoisted_5$8))
     ], 64);
   }
   var ExpansibleWrap_vue_vue_type_style_index_0_scoped_true_lang = "";
-  const _sfc_main$i = vue.defineComponent({
+  const _sfc_main$j = vue.defineComponent({
     name: "ExpansibleWrap",
     components: { Icon, TransitionExpand },
     props: {
@@ -9120,7 +9124,78 @@ var __publicField = (obj, key, value) => {
       };
     }
   });
-  var ExpansibleWrap = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", render$i], ["__scopeId", "data-v-6e8e8f4c"]]);
+  var ExpansibleWrap = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", render$j], ["__scopeId", "data-v-6e8e8f4c"]]);
+  const _withScopeId$1 = (n2) => (vue.pushScopeId("data-v-8cbc69f6"), n2 = n2(), vue.popScopeId(), n2);
+  const _hoisted_1$f = ["data-index"];
+  const _hoisted_2$d = { class: "dnd-list__drag-icon" };
+  const _hoisted_3$c = { class: "dnd-list_order-prefix text-14px-regular" };
+  const _hoisted_4$8 = { class: "dnd-list__label text-14px-regular" };
+  const _hoisted_5$7 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ vue.createElementVNode("div", { class: "flexspace" }, null, -1));
+  const _hoisted_6$1 = { class: "row-control" };
+  function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+    const _component_Icon = vue.resolveComponent("Icon");
+    const _component_Draggable = vue.resolveComponent("Draggable");
+    return vue.openBlock(), vue.createBlock(_component_Draggable, vue.mergeProps({
+      class: "dnd-list",
+      modelValue: _ctx.items,
+      "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.items = $event)
+    }, _ctx.dragOptions, { itemKey: "value" }), {
+      item: vue.withCtx(({ element, index }) => [
+        vue.createElementVNode("div", {
+          class: "dnd-list__row dnd-list__draggable",
+          "data-index": index
+        }, [
+          vue.createElementVNode("div", _hoisted_2$d, [
+            vue.createVNode(_component_Icon, { name: "ic24-drop" })
+          ]),
+          vue.createElementVNode("span", _hoisted_3$c, vue.toDisplayString(index + 1) + ".", 1),
+          vue.createElementVNode("span", _hoisted_4$8, vue.toDisplayString(element.label), 1),
+          _hoisted_5$7,
+          vue.createElementVNode("div", _hoisted_6$1, [
+            vue.renderSlot(_ctx.$slots, "control", {
+              row: element,
+              index
+            }, void 0, true)
+          ])
+        ], 8, _hoisted_1$f)
+      ]),
+      _: 3
+    }, 16, ["modelValue"]);
+  }
+  var SortedList_vue_vue_type_style_index_0_scoped_true_lang = "";
+  const _sfc_main$i = vue.defineComponent({
+    name: "SortedList",
+    components: { Icon, Draggable: Draggable__default["default"] },
+    props: {
+      modelValue: {
+        type: Array,
+        default: () => []
+      }
+    },
+    emits: ["update:modelValue"],
+    setup(props, { emit }) {
+      const dragOptions = {
+        animation: 200,
+        fallbackTolerance: 1,
+        touchStartThreshold: 1,
+        easing: "cubic-bezier(0,0,1,1)",
+        forceFallback: true,
+        fallbackOnBody: true,
+        dragClass: "drag",
+        ghostClass: "ghost",
+        group: "description",
+        disabled: false
+      };
+      const items = vue.computed({
+        get: () => props.modelValue,
+        set: (value) => {
+          emit("update:modelValue", value);
+        }
+      });
+      return { dragOptions, items };
+    }
+  });
+  var SortedList = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", render$i], ["__scopeId", "data-v-8cbc69f6"]]);
   const _withScopeId = (n2) => (vue.pushScopeId("data-v-5d8c1aaa"), n2 = n2(), vue.popScopeId(), n2);
   const _hoisted_1$e = { class: "bubbles" };
   const _hoisted_2$c = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ vue.createElementVNode("span", null, null, -1));
@@ -16380,6 +16455,7 @@ var __publicField = (obj, key, value) => {
   exports2.Select = Select;
   exports2.ServerPagination = ServerPagination;
   exports2.Shine = Shine;
+  exports2.SortedList = SortedList;
   exports2.Table = Table;
   exports2.TableDataSource = TableDataSource;
   exports2.Tabs = Tabs;

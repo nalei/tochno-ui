@@ -33,22 +33,23 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-import { openBlock, createBlock, Transition, withCtx, createElementBlock, createElementVNode, renderSlot, createCommentVNode, defineComponent, Fragment, normalizeClass, pushScopeId, popScopeId, ref, computed, onMounted, mergeProps, watch, resolveComponent, renderList, createVNode, resolveDynamicComponent, createTextVNode, toDisplayString, withDirectives, vShow, normalizeStyle, withKeys, withModifiers, resolveDirective, vModelDynamic, inject, normalizeProps, nextTick, TransitionGroup, toRef, onBeforeUnmount, vModelText, reactive, render as render$B } from "vue";
+import { openBlock, createBlock, Transition, withCtx, createElementBlock, createElementVNode, renderSlot, createCommentVNode, defineComponent, Fragment, normalizeClass, pushScopeId, popScopeId, ref, computed, onMounted, mergeProps, watch, resolveComponent, renderList, createVNode, resolveDynamicComponent, createTextVNode, toDisplayString, withDirectives, vShow, normalizeStyle, withKeys, withModifiers, resolveDirective, vModelDynamic, inject, normalizeProps, nextTick, TransitionGroup, toRef, onBeforeUnmount, vModelText, reactive, render as render$C } from "vue";
+import Draggable from "vuedraggable";
 var common = "";
-const _hoisted_1$v = {
+const _hoisted_1$w = {
   key: 0,
   class: "bottom-bar"
 };
-const _hoisted_2$q = { class: "bottom-bar__title" };
-const _hoisted_3$m = { class: "bottom-bar__buttons" };
-function render$A(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_2$r = { class: "bottom-bar__title" };
+const _hoisted_3$n = { class: "bottom-bar__buttons" };
+function render$B(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, { name: "slide-top" }, {
     default: withCtx(() => [
-      _ctx.opened ? (openBlock(), createElementBlock("div", _hoisted_1$v, [
-        createElementVNode("div", _hoisted_2$q, [
+      _ctx.opened ? (openBlock(), createElementBlock("div", _hoisted_1$w, [
+        createElementVNode("div", _hoisted_2$r, [
           renderSlot(_ctx.$slots, "title", {}, void 0, true)
         ]),
-        createElementVNode("div", _hoisted_3$m, [
+        createElementVNode("div", _hoisted_3$n, [
           renderSlot(_ctx.$slots, "default", {}, void 0, true)
         ])
       ])) : createCommentVNode("", true)
@@ -64,7 +65,7 @@ var _export_sfc = (sfc, props) => {
   }
   return target2;
 };
-const _sfc_main$z = defineComponent({
+const _sfc_main$A = defineComponent({
   name: "BottomBar",
   components: {},
   props: {
@@ -74,26 +75,26 @@ const _sfc_main$z = defineComponent({
     }
   }
 });
-var BottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", render$A], ["__scopeId", "data-v-db06b442"]]);
-const _withScopeId$3 = (n2) => (pushScopeId("data-v-37a9e7e7"), n2 = n2(), popScopeId(), n2);
-const _hoisted_1$u = {
+var BottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$A, [["render", render$B], ["__scopeId", "data-v-db06b442"]]);
+const _withScopeId$4 = (n2) => (pushScopeId("data-v-37a9e7e7"), n2 = n2(), popScopeId(), n2);
+const _hoisted_1$v = {
   class: "fixed-bottom-bar-anchor",
   ref: "bottomBarAnchorRef"
 };
-const _hoisted_2$p = /* @__PURE__ */ _withScopeId$3(() => /* @__PURE__ */ createElementVNode("div", { class: "fixed-bottom-bar-holder" }, null, -1));
-function render$z(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_2$q = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("div", { class: "fixed-bottom-bar-holder" }, null, -1));
+function render$A(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock(Fragment, null, [
-    createElementVNode("div", _hoisted_1$u, null, 512),
+    createElementVNode("div", _hoisted_1$v, null, 512),
     createElementVNode("div", {
       class: normalizeClass(["fixed-bottom-bar", _ctx.bottomBarClasses])
     }, [
       renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ], 2),
-    _hoisted_2$p
+    _hoisted_2$q
   ], 64);
 }
 var FixedBottomBar_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$y = defineComponent({
+const _sfc_main$z = defineComponent({
   name: "FixedBottomBar",
   props: {
     isStick: {
@@ -119,7 +120,7 @@ const _sfc_main$y = defineComponent({
     return { bottomBarAnchorRef, bottomBarClasses };
   }
 });
-var FixedBottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", render$z], ["__scopeId", "data-v-37a9e7e7"]]);
+var FixedBottomBar = /* @__PURE__ */ _export_sfc(_sfc_main$z, [["render", render$A], ["__scopeId", "data-v-37a9e7e7"]]);
 var commonjsGlobal = typeof globalThis !== "undefined" ? globalThis : typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : {};
 var lib$5 = {};
 var Parser$1 = {};
@@ -6606,7 +6607,7 @@ var singleTag = new Set([
   "track",
   "wbr"
 ]);
-function render$y(node2, options) {
+function render$z(node2, options) {
   if (options === void 0) {
     options = {};
   }
@@ -6617,11 +6618,11 @@ function render$y(node2, options) {
   }
   return output;
 }
-lib$1.default = render$y;
+lib$1.default = render$z;
 function renderNode(node2, options) {
   switch (node2.type) {
     case ElementType.Root:
-      return render$y(node2.children, options);
+      return render$z(node2.children, options);
     case ElementType.Directive:
     case ElementType.Doctype:
       return renderDirective(node2);
@@ -6672,7 +6673,7 @@ function renderTag(elem, opts) {
   } else {
     tag += ">";
     if (elem.children.length > 0) {
-      tag += render$y(elem.children, opts);
+      tag += render$z(elem.children, opts);
     }
     if (opts.xmlMode || !singleTag.has(elem.name)) {
       tag += "</" + elem.name + ">";
@@ -7661,12 +7662,12 @@ FeedHandler$1.parseFeed = parseFeed;
     return FeedHandler_1.FeedHandler;
   } });
 })(lib$5);
-const _hoisted_1$t = ["innerHTML"];
-function render$x(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$u = ["innerHTML"];
+function render$y(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("svg", mergeProps({
     class: "sui-icon",
     innerHTML: _ctx.svgContent
-  }, __spreadValues({ width: 0, height: 0 }, _ctx.svgAttrs), { style: _ctx.iconStyle }), null, 16, _hoisted_1$t);
+  }, __spreadValues({ width: 0, height: 0 }, _ctx.svgAttrs), { style: _ctx.iconStyle }), null, 16, _hoisted_1$u);
 }
 var Icon_vue_vue_type_style_index_0_lang = "";
 const PARSER_OPTIONS = {
@@ -7679,7 +7680,7 @@ const ICONS_SPRITE = { sprites: [require("./icons-sprite.svg")] };
 const cacheMap = new Map();
 const parsedDocuments = new Map();
 const symbolsMap = new Map();
-const _sfc_main$x = defineComponent({
+const _sfc_main$y = defineComponent({
   name: "Icon",
   props: {
     spriteUrl: {
@@ -7802,12 +7803,12 @@ function useSvgController() {
     loadSprites
   };
 }
-var Icon = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", render$x]]);
-const _hoisted_1$s = { class: "breadcrumbs" };
-function render$w(_ctx, _cache, $props, $setup, $data, $options) {
+var Icon = /* @__PURE__ */ _export_sfc(_sfc_main$y, [["render", render$y]]);
+const _hoisted_1$t = { class: "breadcrumbs" };
+function render$x(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
   return openBlock(), createElementBlock("nav", null, [
-    createElementVNode("ul", _hoisted_1$s, [
+    createElementVNode("ul", _hoisted_1$t, [
       (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.crumbs, (crumb, i2) => {
         return openBlock(), createElementBlock("li", {
           class: normalizeClass(["crumb", { "last-child": _ctx.crumbs.length === i2 + 1 }]),
@@ -7832,7 +7833,7 @@ function render$w(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var Breadcrumbs_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$w = defineComponent({
+const _sfc_main$x = defineComponent({
   name: "Breadcrumbs",
   components: { Icon },
   props: {
@@ -7842,29 +7843,29 @@ const _sfc_main$w = defineComponent({
     }
   }
 });
-var Breadcrumbs = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", render$w], ["__scopeId", "data-v-414c9d3d"]]);
-const _hoisted_1$r = ["type"];
-const _hoisted_2$o = {
+var Breadcrumbs = /* @__PURE__ */ _export_sfc(_sfc_main$x, [["render", render$x], ["__scopeId", "data-v-414c9d3d"]]);
+const _hoisted_1$s = ["type"];
+const _hoisted_2$p = {
   key: 0,
   class: "button-content caption-14px-medium"
 };
-function render$v(_ctx, _cache, $props, $setup, $data, $options) {
+function render$w(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
   return openBlock(), createElementBlock("button", {
     class: normalizeClass(["button", _ctx.buttonClasses]),
     type: _ctx.$attrs.type || "button"
   }, [
-    !_ctx.iconOnly ? (openBlock(), createElementBlock("span", _hoisted_2$o, [
+    !_ctx.iconOnly ? (openBlock(), createElementBlock("span", _hoisted_2$p, [
       renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ])) : createCommentVNode("", true),
     _ctx.icon ? (openBlock(), createBlock(_component_Icon, mergeProps({
       key: 1,
       class: "button-icon"
     }, __spreadValues({}, _ctx.icon)), null, 16)) : createCommentVNode("", true)
-  ], 10, _hoisted_1$r);
+  ], 10, _hoisted_1$s);
 }
 var Button_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$v = defineComponent({
+const _sfc_main$w = defineComponent({
   name: "Button",
   components: { Icon },
   props: {
@@ -7908,31 +7909,31 @@ const _sfc_main$v = defineComponent({
     return { buttonClasses };
   }
 });
-var Button = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", render$v], ["__scopeId", "data-v-3a157fa3"]]);
-const _hoisted_1$q = {
+var Button = /* @__PURE__ */ _export_sfc(_sfc_main$w, [["render", render$w], ["__scopeId", "data-v-3a157fa3"]]);
+const _hoisted_1$r = {
   key: 0,
   class: "card-sidebar"
 };
-const _hoisted_2$n = { class: "step-number h-500" };
-const _hoisted_3$l = { class: "card-content" };
-const _hoisted_4$g = { class: "card-header" };
-const _hoisted_5$d = {
+const _hoisted_2$o = { class: "step-number h-500" };
+const _hoisted_3$m = { class: "card-content" };
+const _hoisted_4$h = { class: "card-header" };
+const _hoisted_5$e = {
   key: 0,
   class: "card-title h-500"
 };
-const _hoisted_6$2 = { class: "card-actions" };
+const _hoisted_6$3 = { class: "card-actions" };
 const _hoisted_7$1 = { class: "card-description text-14px-regular" };
-function render$u(_ctx, _cache, $props, $setup, $data, $options) {
+function render$v(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: normalizeClass(["card", _ctx.cardClasses])
   }, [
-    _ctx.number ? (openBlock(), createElementBlock("div", _hoisted_1$q, [
-      createElementVNode("span", _hoisted_2$n, toDisplayString(_ctx.number), 1)
+    _ctx.number ? (openBlock(), createElementBlock("div", _hoisted_1$r, [
+      createElementVNode("span", _hoisted_2$o, toDisplayString(_ctx.number), 1)
     ])) : createCommentVNode("", true),
-    createElementVNode("div", _hoisted_3$l, [
-      createElementVNode("div", _hoisted_4$g, [
-        _ctx.title ? (openBlock(), createElementBlock("div", _hoisted_5$d, toDisplayString(_ctx.title), 1)) : createCommentVNode("", true),
-        createElementVNode("div", _hoisted_6$2, [
+    createElementVNode("div", _hoisted_3$m, [
+      createElementVNode("div", _hoisted_4$h, [
+        _ctx.title ? (openBlock(), createElementBlock("div", _hoisted_5$e, toDisplayString(_ctx.title), 1)) : createCommentVNode("", true),
+        createElementVNode("div", _hoisted_6$3, [
           renderSlot(_ctx.$slots, "actions", {}, void 0, true)
         ]),
         createElementVNode("div", _hoisted_7$1, [
@@ -7944,7 +7945,7 @@ function render$u(_ctx, _cache, $props, $setup, $data, $options) {
   ], 2);
 }
 var Card_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$u = defineComponent({
+const _sfc_main$v = defineComponent({
   name: "Card",
   props: {
     title: {
@@ -7973,13 +7974,13 @@ const _sfc_main$u = defineComponent({
     return { cardClasses };
   }
 });
-var Card = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", render$u], ["__scopeId", "data-v-5bba588c"]]);
-const _hoisted_1$p = ["for"];
-const _hoisted_2$m = ["value", "id", "disabled"];
-const _hoisted_3$k = ["for"];
-const _hoisted_4$f = ["src"];
-const _hoisted_5$c = { class: "indeterminate-dash" };
-function render$t(_ctx, _cache, $props, $setup, $data, $options) {
+var Card = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", render$v], ["__scopeId", "data-v-5bba588c"]]);
+const _hoisted_1$q = ["for"];
+const _hoisted_2$n = ["value", "id", "disabled"];
+const _hoisted_3$l = ["for"];
+const _hoisted_4$g = ["src"];
+const _hoisted_5$d = { class: "indeterminate-dash" };
+function render$u(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: normalizeClass(["checkbox", _ctx.boxClass])
   }, [
@@ -7987,7 +7988,7 @@ function render$t(_ctx, _cache, $props, $setup, $data, $options) {
       key: 0,
       class: normalizeClass(["label", _ctx.labelClass]),
       for: _ctx.id
-    }, toDisplayString(_ctx.label), 11, _hoisted_1$p)) : createCommentVNode("", true),
+    }, toDisplayString(_ctx.label), 11, _hoisted_1$q)) : createCommentVNode("", true),
     createElementVNode("input", {
       class: "hidden",
       type: "checkbox",
@@ -7997,7 +7998,7 @@ function render$t(_ctx, _cache, $props, $setup, $data, $options) {
       value: _ctx.modelValue,
       id: _ctx.id,
       disabled: _ctx.disabled
-    }, null, 40, _hoisted_2$m),
+    }, null, 40, _hoisted_2$n),
     createElementVNode("label", {
       class: normalizeClass(["box", _ctx.boxClass]),
       tabindex: "-1",
@@ -8006,13 +8007,13 @@ function render$t(_ctx, _cache, $props, $setup, $data, $options) {
       withDirectives(createElementVNode("img", {
         class: "icon",
         src: _ctx.imgSrc
-      }, null, 8, _hoisted_4$f), [
+      }, null, 8, _hoisted_4$g), [
         [vShow, !_ctx.indeterminate && _ctx.modelValue]
       ]),
-      withDirectives(createElementVNode("div", _hoisted_5$c, null, 512), [
+      withDirectives(createElementVNode("div", _hoisted_5$d, null, 512), [
         [vShow, _ctx.indeterminate]
       ])
-    ], 10, _hoisted_3$k),
+    ], 10, _hoisted_3$l),
     _ctx.error || _ctx.caption ? (openBlock(), createElementBlock("div", {
       key: 1,
       class: normalizeClass(["caption", _ctx.captionClass])
@@ -8020,7 +8021,7 @@ function render$t(_ctx, _cache, $props, $setup, $data, $options) {
   ], 2);
 }
 var Checkbox_vue_vue_type_style_index_0_lang = "";
-const _sfc_main$t = defineComponent({
+const _sfc_main$u = defineComponent({
   name: "Checkbox",
   inheritAttrs: false,
   emits: ["update:modelValue"],
@@ -8097,36 +8098,36 @@ const _sfc_main$t = defineComponent({
     };
   }
 });
-var Checkbox = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", render$t]]);
-const _withScopeId$2 = (n2) => (pushScopeId("data-v-7ef9b904"), n2 = n2(), popScopeId(), n2);
-const _hoisted_1$o = ["tabindex"];
-const _hoisted_2$l = { class: "option-content" };
-const _hoisted_3$j = { class: "option-label" };
-const _hoisted_4$e = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", { class: "break" }, null, -1));
-const _hoisted_5$b = {
+var Checkbox = /* @__PURE__ */ _export_sfc(_sfc_main$u, [["render", render$u]]);
+const _withScopeId$3 = (n2) => (pushScopeId("data-v-7ef9b904"), n2 = n2(), popScopeId(), n2);
+const _hoisted_1$p = ["tabindex"];
+const _hoisted_2$m = { class: "option-content" };
+const _hoisted_3$k = { class: "option-label" };
+const _hoisted_4$f = /* @__PURE__ */ _withScopeId$3(() => /* @__PURE__ */ createElementVNode("div", { class: "break" }, null, -1));
+const _hoisted_5$c = {
   key: 1,
   class: "option-subtitle caption-10px-medium"
 };
-function render$s(_ctx, _cache, $props, $setup, $data, $options) {
+function render$t(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
   return openBlock(), createElementBlock("li", {
     class: normalizeClass(["dropdown-option text-14px-regular", _ctx.optionClasses]),
     tabindex: _ctx.tabindex
   }, [
-    createElementVNode("div", _hoisted_2$l, [
+    createElementVNode("div", _hoisted_2$m, [
       _ctx.icon ? (openBlock(), createBlock(_component_Icon, mergeProps({
         key: 0,
         class: "option-icon"
       }, _ctx.icon), null, 16)) : createCommentVNode("", true),
-      createElementVNode("span", _hoisted_3$j, toDisplayString(_ctx.label), 1),
-      _hoisted_4$e,
-      _ctx.subtitle ? (openBlock(), createElementBlock("small", _hoisted_5$b, toDisplayString(_ctx.subtitle), 1)) : createCommentVNode("", true)
+      createElementVNode("span", _hoisted_3$k, toDisplayString(_ctx.label), 1),
+      _hoisted_4$f,
+      _ctx.subtitle ? (openBlock(), createElementBlock("small", _hoisted_5$c, toDisplayString(_ctx.subtitle), 1)) : createCommentVNode("", true)
     ]),
     renderSlot(_ctx.$slots, "control", {}, void 0, true)
-  ], 10, _hoisted_1$o);
+  ], 10, _hoisted_1$p);
 }
 var DropdownOption_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$s = defineComponent({
+const _sfc_main$t = defineComponent({
   name: "DropdownOption",
   components: { Icon },
   props: {
@@ -8166,18 +8167,18 @@ const _sfc_main$s = defineComponent({
     };
   }
 });
-var DropdownOption = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", render$s], ["__scopeId", "data-v-7ef9b904"]]);
-const _hoisted_1$n = {
+var DropdownOption = /* @__PURE__ */ _export_sfc(_sfc_main$t, [["render", render$t], ["__scopeId", "data-v-7ef9b904"]]);
+const _hoisted_1$o = {
   key: 0,
   class: "options"
 };
-const _hoisted_2$k = {
+const _hoisted_2$l = {
   key: 1,
   class: "no-results"
 };
-const _hoisted_3$i = { class: "no-results-title caption-16px-medium" };
-const _hoisted_4$d = { class: "no-results-description text-12px-regular" };
-function render$r(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_3$j = { class: "no-results-title caption-16px-medium" };
+const _hoisted_4$e = { class: "no-results-description text-12px-regular" };
+function render$s(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_DropdownOption = resolveComponent("DropdownOption");
   const _component_Icon = resolveComponent("Icon");
   return withDirectives((openBlock(), createElementBlock("div", {
@@ -8185,7 +8186,7 @@ function render$r(_ctx, _cache, $props, $setup, $data, $options) {
     style: normalizeStyle(_ctx.dropdownStyles)
   }, [
     renderSlot(_ctx.$slots, "header", {}, void 0, true),
-    !_ctx.noResults ? (openBlock(), createElementBlock("ul", _hoisted_1$n, [
+    !_ctx.noResults ? (openBlock(), createElementBlock("ul", _hoisted_1$o, [
       (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.options, (option, index) => {
         var _a;
         return openBlock(), createBlock(_component_DropdownOption, mergeProps(option, {
@@ -8204,14 +8205,14 @@ function render$r(_ctx, _cache, $props, $setup, $data, $options) {
         }, 1040, ["onKeypress", "onClick", "active"]);
       }), 128)),
       renderSlot(_ctx.$slots, "default", {}, void 0, true)
-    ])) : withDirectives((openBlock(), createElementBlock("div", _hoisted_2$k, [
+    ])) : withDirectives((openBlock(), createElementBlock("div", _hoisted_2$l, [
       createVNode(_component_Icon, {
         class: "no-results-icon",
         name: "ic24-search",
         color: "--blue-500"
       }),
-      createElementVNode("h4", _hoisted_3$i, toDisplayString(_ctx.dropdownDictionary.noResultsTitle), 1),
-      createElementVNode("p", _hoisted_4$d, toDisplayString(_ctx.dropdownDictionary.noResultsDescription), 1)
+      createElementVNode("h4", _hoisted_3$j, toDisplayString(_ctx.dropdownDictionary.noResultsTitle), 1),
+      createElementVNode("p", _hoisted_4$e, toDisplayString(_ctx.dropdownDictionary.noResultsDescription), 1)
     ], 512)), [
       [vShow, _ctx.opened]
     ])
@@ -8224,7 +8225,7 @@ const DEFAULT_DICTIONARY$1 = {
   noResultsTitle: "No matching search results",
   noResultsDescription: "Try again using more general search terms"
 };
-const _sfc_main$r = defineComponent({
+const _sfc_main$s = defineComponent({
   name: "Dropdown",
   components: {
     DropdownOption,
@@ -8279,37 +8280,37 @@ const _sfc_main$r = defineComponent({
     };
   }
 });
-var Dropdown = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", render$r], ["__scopeId", "data-v-3170e559"]]);
-const _hoisted_1$m = { class: "file-wrapper" };
-const _hoisted_2$j = ["disabled"];
-const _hoisted_3$h = {
+var Dropdown = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", render$s], ["__scopeId", "data-v-3170e559"]]);
+const _hoisted_1$n = { class: "file-wrapper" };
+const _hoisted_2$k = ["disabled"];
+const _hoisted_3$i = {
   key: 0,
   class: "file-label text-13px-regular loaded"
 };
-const _hoisted_4$c = {
+const _hoisted_4$d = {
   key: 1,
   class: "file-label text-13px-medium"
 };
-const _hoisted_5$a = /* @__PURE__ */ createTextVNode("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C");
-function render$q(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_5$b = /* @__PURE__ */ createTextVNode("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C");
+function render$r(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
-  return openBlock(), createElementBlock("label", _hoisted_1$m, [
+  return openBlock(), createElementBlock("label", _hoisted_1$n, [
     createElementVNode("input", mergeProps({ class: "file-input" }, _ctx.$attrs, {
       type: "file",
       onChange: _cache[0] || (_cache[0] = (...args) => _ctx.onChangeFile && _ctx.onChangeFile(...args)),
       disabled: _ctx.disabled
-    }), null, 16, _hoisted_2$j),
-    _ctx.file || _ctx.fileName ? (openBlock(), createElementBlock("div", _hoisted_3$h, [
+    }), null, 16, _hoisted_2$k),
+    _ctx.file || _ctx.fileName ? (openBlock(), createElementBlock("div", _hoisted_3$i, [
       createVNode(_component_Icon, { name: "ic24-file" }),
       createTextVNode(toDisplayString(_ctx.name), 1)
-    ])) : (openBlock(), createElementBlock("div", _hoisted_4$c, [
+    ])) : (openBlock(), createElementBlock("div", _hoisted_4$d, [
       createVNode(_component_Icon, { name: "ic24-file-import" }),
-      _hoisted_5$a
+      _hoisted_5$b
     ]))
   ]);
 }
 var FileUpload_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$q = defineComponent({
+const _sfc_main$r = defineComponent({
   name: "FileUpload",
   components: { Icon },
   props: {
@@ -8350,18 +8351,18 @@ const _sfc_main$q = defineComponent({
     };
   }
 });
-var FileUpload = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", render$q], ["__scopeId", "data-v-a39a15b0"]]);
-const _hoisted_1$l = { class: "sticky-wrapper" };
-const _hoisted_2$i = { class: "filters" };
-function render$p(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$l, [
-    createElementVNode("div", _hoisted_2$i, [
+var FileUpload = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", render$r], ["__scopeId", "data-v-a39a15b0"]]);
+const _hoisted_1$m = { class: "sticky-wrapper" };
+const _hoisted_2$j = { class: "filters" };
+function render$q(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$m, [
+    createElementVNode("div", _hoisted_2$j, [
       renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ])
   ]);
 }
 var Filters_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$p = defineComponent({
+const _sfc_main$q = defineComponent({
   name: "Filters",
   setup() {
     onMounted(() => {
@@ -8374,7 +8375,7 @@ const _sfc_main$p = defineComponent({
     return {};
   }
 });
-var Filters = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", render$p], ["__scopeId", "data-v-fd1a5c78"]]);
+var Filters = /* @__PURE__ */ _export_sfc(_sfc_main$q, [["render", render$q], ["__scopeId", "data-v-fd1a5c78"]]);
 /*!
  * maska v1.5.0
  * (c) 2019-2021 Alexander Shabunevich
@@ -8542,22 +8543,22 @@ function k(e2) {
   e2.directive("maska", h);
 }
 typeof window != "undefined" && window.Vue && window.Vue.use && window.Vue.use(k);
-const _hoisted_1$k = { class: "input-wrapper" };
-const _hoisted_2$h = ["for"];
-const _hoisted_3$g = ["placeholder", "id", "disabled"];
-const _hoisted_4$b = {
+const _hoisted_1$l = { class: "input-wrapper" };
+const _hoisted_2$i = ["for"];
+const _hoisted_3$h = ["placeholder", "id", "disabled"];
+const _hoisted_4$c = {
   key: 1,
   class: "input-icon"
 };
-function render$o(_ctx, _cache, $props, $setup, $data, $options) {
+function render$p(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
   const _directive_maska = resolveDirective("maska");
-  return openBlock(), createElementBlock("div", _hoisted_1$k, [
+  return openBlock(), createElementBlock("div", _hoisted_1$l, [
     _ctx.label ? (openBlock(), createElementBlock("label", {
       key: 0,
       class: normalizeClass(["label caption-13px-medium", _ctx.labelClass]),
       for: _ctx.id
-    }, toDisplayString(_ctx.label), 11, _hoisted_2$h)) : createCommentVNode("", true),
+    }, toDisplayString(_ctx.label), 11, _hoisted_2$i)) : createCommentVNode("", true),
     createElementVNode("div", {
       class: normalizeClass(["input-box", _ctx.boxClass])
     }, [
@@ -8576,7 +8577,7 @@ function render$o(_ctx, _cache, $props, $setup, $data, $options) {
         id: _ctx.id,
         disabled: _ctx.disabled,
         class: _ctx.inputClass
-      }), null, 16, _hoisted_3$g), [
+      }), null, 16, _hoisted_3$h), [
         [vModelDynamic, _ctx.message],
         [_directive_maska, _ctx.mask]
       ]),
@@ -8584,7 +8585,7 @@ function render$o(_ctx, _cache, $props, $setup, $data, $options) {
         key: 0,
         class: normalizeClass(["input-badge text-14px-regular", _ctx.badgeClass])
       }, toDisplayString(_ctx.badge), 3)) : createCommentVNode("", true),
-      _ctx.icon ? (openBlock(), createElementBlock("div", _hoisted_4$b, [
+      _ctx.icon ? (openBlock(), createElementBlock("div", _hoisted_4$c, [
         createVNode(_component_Icon, mergeProps(__spreadProps(__spreadValues({}, _ctx.icon), { color: _ctx.isFocused ? "--blue-500" : "--gray-500" }), { onClick: _ctx.handleIconClick }), null, 16, ["onClick"])
       ])) : createCommentVNode("", true)
     ], 2),
@@ -8595,7 +8596,7 @@ function render$o(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var Input_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$o = defineComponent({
+const _sfc_main$p = defineComponent({
   name: "Input",
   components: { Icon },
   directives: { maska: h },
@@ -8732,51 +8733,51 @@ const _sfc_main$o = defineComponent({
     };
   }
 });
-var Input = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", render$o], ["__scopeId", "data-v-ee702acc"]]);
-const _hoisted_1$j = { class: "page" };
-const _hoisted_2$g = { class: "page-body" };
-const _hoisted_3$f = { class: "page-main" };
-function render$n(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$j, [
-    createElementVNode("div", _hoisted_2$g, [
+var Input = /* @__PURE__ */ _export_sfc(_sfc_main$p, [["render", render$p], ["__scopeId", "data-v-ee702acc"]]);
+const _hoisted_1$k = { class: "page" };
+const _hoisted_2$h = { class: "page-body" };
+const _hoisted_3$g = { class: "page-main" };
+function render$o(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$k, [
+    createElementVNode("div", _hoisted_2$h, [
       renderSlot(_ctx.$slots, "sidebar", { class: "page-sidebar" }, void 0, true),
-      createElementVNode("main", _hoisted_3$f, [
+      createElementVNode("main", _hoisted_3$g, [
         renderSlot(_ctx.$slots, "default", {}, void 0, true)
       ])
     ])
   ]);
 }
 var PageShell_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$n = defineComponent({
+const _sfc_main$o = defineComponent({
   name: "PageShell"
 });
-var PageShell = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", render$n], ["__scopeId", "data-v-a8685f58"]]);
-const _withScopeId$1 = (n2) => (pushScopeId("data-v-a91ed458"), n2 = n2(), popScopeId(), n2);
-const _hoisted_1$i = { class: "page-sidebar" };
-const _hoisted_2$f = { class: "sidebar-header" };
-const _hoisted_3$e = { class: "sidebar-body" };
-const _hoisted_4$a = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("div", { class: "flexspace" }, null, -1));
-const _hoisted_5$9 = { class: "sidebar-footer" };
-function render$m(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("div", _hoisted_1$i, [
-    createElementVNode("div", _hoisted_2$f, [
+var PageShell = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["render", render$o], ["__scopeId", "data-v-a8685f58"]]);
+const _withScopeId$2 = (n2) => (pushScopeId("data-v-a91ed458"), n2 = n2(), popScopeId(), n2);
+const _hoisted_1$j = { class: "page-sidebar" };
+const _hoisted_2$g = { class: "sidebar-header" };
+const _hoisted_3$f = { class: "sidebar-body" };
+const _hoisted_4$b = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", { class: "flexspace" }, null, -1));
+const _hoisted_5$a = { class: "sidebar-footer" };
+function render$n(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("div", _hoisted_1$j, [
+    createElementVNode("div", _hoisted_2$g, [
       renderSlot(_ctx.$slots, "header", {}, void 0, true)
     ]),
-    createElementVNode("div", _hoisted_3$e, [
+    createElementVNode("div", _hoisted_3$f, [
       renderSlot(_ctx.$slots, "default", {}, void 0, true)
     ]),
-    _hoisted_4$a,
-    createElementVNode("div", _hoisted_5$9, [
+    _hoisted_4$b,
+    createElementVNode("div", _hoisted_5$a, [
       renderSlot(_ctx.$slots, "footer", {}, void 0, true)
     ])
   ]);
 }
 var PageSidebar_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$m = defineComponent({
+const _sfc_main$n = defineComponent({
   name: "PageSidebar"
 });
-var PageSidebar = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", render$m], ["__scopeId", "data-v-a91ed458"]]);
-function render$l(_ctx, _cache, $props, $setup, $data, $options) {
+var PageSidebar = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["render", render$n], ["__scopeId", "data-v-a91ed458"]]);
+function render$m(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(Transition, {
     name: "expand",
     onLeave: _ctx.leave,
@@ -8790,7 +8791,7 @@ function render$l(_ctx, _cache, $props, $setup, $data, $options) {
   }, 8, ["onLeave", "onEnter", "onAfterEnter"]);
 }
 var TransitionExpand_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$l = defineComponent({
+const _sfc_main$m = defineComponent({
   name: "TransitionExpand",
   methods: {
     enter(element) {
@@ -8822,10 +8823,10 @@ const _sfc_main$l = defineComponent({
     }
   }
 });
-var TransitionExpand = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", render$l], ["__scopeId", "data-v-2980aab9"]]);
-const _hoisted_1$h = { class: "list" };
-function render$k(_ctx, _cache, $props, $setup, $data, $options) {
-  return openBlock(), createElementBlock("ul", _hoisted_1$h, [
+var TransitionExpand = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["render", render$m], ["__scopeId", "data-v-2980aab9"]]);
+const _hoisted_1$i = { class: "list" };
+function render$l(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("ul", _hoisted_1$i, [
     (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.data, (item, index) => {
       return openBlock(), createElementBlock("li", {
         class: "list-item text-14px-regular",
@@ -8840,7 +8841,7 @@ function render$k(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var List_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$k = defineComponent({
+const _sfc_main$l = defineComponent({
   name: "List",
   props: {
     data: {
@@ -8850,29 +8851,29 @@ const _sfc_main$k = defineComponent({
     }
   }
 });
-var List = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", render$k], ["__scopeId", "data-v-3941fc9e"]]);
-const _hoisted_1$g = { class: "grid grid_gap_16" };
-const _hoisted_2$e = { class: "grid-12-12" };
-const _hoisted_3$d = {
+var List = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["render", render$l], ["__scopeId", "data-v-3941fc9e"]]);
+const _hoisted_1$h = { class: "grid grid_gap_16" };
+const _hoisted_2$f = { class: "grid-12-12" };
+const _hoisted_3$e = {
   key: 0,
   class: "label caption-13px-medium"
 };
-const _hoisted_4$9 = {
+const _hoisted_4$a = {
   key: 2,
   class: "options-more-wrap"
 };
-const _hoisted_5$8 = { class: "options-more__label caption-13px-medium" };
-const _hoisted_6$1 = {
+const _hoisted_5$9 = { class: "options-more__label caption-13px-medium" };
+const _hoisted_6$2 = {
   key: 3,
   class: "options-more-holder"
 };
-function render$j(_ctx, _cache, $props, $setup, $data, $options) {
+function render$k(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_List = resolveComponent("List");
   const _component_TransitionExpand = resolveComponent("TransitionExpand");
   const _component_Icon = resolveComponent("Icon");
-  return openBlock(), createElementBlock("div", _hoisted_1$g, [
-    createElementVNode("div", _hoisted_2$e, [
-      _ctx.label ? (openBlock(), createElementBlock("label", _hoisted_3$d, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
+  return openBlock(), createElementBlock("div", _hoisted_1$h, [
+    createElementVNode("div", _hoisted_2$f, [
+      _ctx.label ? (openBlock(), createElementBlock("label", _hoisted_3$e, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
       createVNode(_component_List, {
         data: _ctx.list.initial,
         class: normalizeClass({ "list-expanded": _ctx.isShowAll })
@@ -8904,12 +8905,12 @@ function render$j(_ctx, _cache, $props, $setup, $data, $options) {
         ]),
         _: 3
       })) : createCommentVNode("", true),
-      _ctx.list.rest.length ? (openBlock(), createElementBlock("div", _hoisted_4$9, [
+      _ctx.list.rest.length ? (openBlock(), createElementBlock("div", _hoisted_4$a, [
         createElementVNode("div", {
           class: "options-more",
           onClick: _cache[0] || (_cache[0] = (...args) => _ctx.onShowAll && _ctx.onShowAll(...args))
         }, [
-          createElementVNode("div", _hoisted_5$8, toDisplayString(_ctx.showAllLabel), 1),
+          createElementVNode("div", _hoisted_5$9, toDisplayString(_ctx.showAllLabel), 1),
           createElementVNode("div", {
             class: normalizeClass(["options-more__icon", { "options-more__icon_opened": _ctx.isShowAll }])
           }, [
@@ -8919,12 +8920,12 @@ function render$j(_ctx, _cache, $props, $setup, $data, $options) {
             })
           ], 2)
         ])
-      ])) : (openBlock(), createElementBlock("div", _hoisted_6$1))
+      ])) : (openBlock(), createElementBlock("div", _hoisted_6$2))
     ])
   ]);
 }
 var ExpansibleList_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$j = defineComponent({
+const _sfc_main$k = defineComponent({
   name: "ExpansibleList",
   components: { Input, Icon, TransitionExpand, List },
   props: {
@@ -8985,29 +8986,29 @@ const _sfc_main$j = defineComponent({
     };
   }
 });
-var ExpansibleList = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", render$j], ["__scopeId", "data-v-dd7d521c"]]);
-const _hoisted_1$f = {
+var ExpansibleList = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", render$k], ["__scopeId", "data-v-dd7d521c"]]);
+const _hoisted_1$g = {
   key: 0,
   class: "label caption-13px-medium"
 };
-const _hoisted_2$d = {
+const _hoisted_2$e = {
   key: 1,
   class: "wrap-rest"
 };
-const _hoisted_3$c = {
+const _hoisted_3$d = {
   key: 2,
   class: "options-more-wrap"
 };
-const _hoisted_4$8 = { class: "options-more__label caption-13px-medium" };
-const _hoisted_5$7 = {
+const _hoisted_4$9 = { class: "options-more__label caption-13px-medium" };
+const _hoisted_5$8 = {
   key: 3,
   class: "options-more-holder"
 };
-function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+function render$j(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TransitionExpand = resolveComponent("TransitionExpand");
   const _component_Icon = resolveComponent("Icon");
   return openBlock(), createElementBlock(Fragment, null, [
-    _ctx.label ? (openBlock(), createElementBlock("label", _hoisted_1$f, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
+    _ctx.label ? (openBlock(), createElementBlock("label", _hoisted_1$g, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
     createElementVNode("div", {
       class: normalizeClass(["wrap-initial", { expanded: _ctx.isShowAll }])
     }, [
@@ -9019,7 +9020,7 @@ function render$i(_ctx, _cache, $props, $setup, $data, $options) {
         }, void 0, true);
       }), 128))
     ], 2),
-    _ctx.list.rest.length ? (openBlock(), createElementBlock("div", _hoisted_2$d, [
+    _ctx.list.rest.length ? (openBlock(), createElementBlock("div", _hoisted_2$e, [
       createVNode(_component_TransitionExpand, null, {
         default: withCtx(() => [
           withDirectives(createElementVNode("div", null, [
@@ -9037,12 +9038,12 @@ function render$i(_ctx, _cache, $props, $setup, $data, $options) {
         _: 3
       })
     ])) : createCommentVNode("", true),
-    _ctx.list.rest.length ? (openBlock(), createElementBlock("div", _hoisted_3$c, [
+    _ctx.list.rest.length ? (openBlock(), createElementBlock("div", _hoisted_3$d, [
       createElementVNode("div", {
         class: "options-more",
         onClick: _cache[0] || (_cache[0] = (...args) => _ctx.onShowAll && _ctx.onShowAll(...args))
       }, [
-        createElementVNode("div", _hoisted_4$8, toDisplayString(_ctx.showAllLabel), 1),
+        createElementVNode("div", _hoisted_4$9, toDisplayString(_ctx.showAllLabel), 1),
         createElementVNode("div", {
           class: normalizeClass(["options-more__icon", { "options-more__icon_opened": _ctx.isShowAll }])
         }, [
@@ -9052,11 +9053,11 @@ function render$i(_ctx, _cache, $props, $setup, $data, $options) {
           })
         ], 2)
       ])
-    ])) : (openBlock(), createElementBlock("div", _hoisted_5$7))
+    ])) : (openBlock(), createElementBlock("div", _hoisted_5$8))
   ], 64);
 }
 var ExpansibleWrap_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _sfc_main$i = defineComponent({
+const _sfc_main$j = defineComponent({
   name: "ExpansibleWrap",
   components: { Icon, TransitionExpand },
   props: {
@@ -9117,7 +9118,78 @@ const _sfc_main$i = defineComponent({
     };
   }
 });
-var ExpansibleWrap = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", render$i], ["__scopeId", "data-v-6e8e8f4c"]]);
+var ExpansibleWrap = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["render", render$j], ["__scopeId", "data-v-6e8e8f4c"]]);
+const _withScopeId$1 = (n2) => (pushScopeId("data-v-8cbc69f6"), n2 = n2(), popScopeId(), n2);
+const _hoisted_1$f = ["data-index"];
+const _hoisted_2$d = { class: "dnd-list__drag-icon" };
+const _hoisted_3$c = { class: "dnd-list_order-prefix text-14px-regular" };
+const _hoisted_4$8 = { class: "dnd-list__label text-14px-regular" };
+const _hoisted_5$7 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("div", { class: "flexspace" }, null, -1));
+const _hoisted_6$1 = { class: "row-control" };
+function render$i(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_Icon = resolveComponent("Icon");
+  const _component_Draggable = resolveComponent("Draggable");
+  return openBlock(), createBlock(_component_Draggable, mergeProps({
+    class: "dnd-list",
+    modelValue: _ctx.items,
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.items = $event)
+  }, _ctx.dragOptions, { itemKey: "value" }), {
+    item: withCtx(({ element, index }) => [
+      createElementVNode("div", {
+        class: "dnd-list__row dnd-list__draggable",
+        "data-index": index
+      }, [
+        createElementVNode("div", _hoisted_2$d, [
+          createVNode(_component_Icon, { name: "ic24-drop" })
+        ]),
+        createElementVNode("span", _hoisted_3$c, toDisplayString(index + 1) + ".", 1),
+        createElementVNode("span", _hoisted_4$8, toDisplayString(element.label), 1),
+        _hoisted_5$7,
+        createElementVNode("div", _hoisted_6$1, [
+          renderSlot(_ctx.$slots, "control", {
+            row: element,
+            index
+          }, void 0, true)
+        ])
+      ], 8, _hoisted_1$f)
+    ]),
+    _: 3
+  }, 16, ["modelValue"]);
+}
+var SortedList_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$i = defineComponent({
+  name: "SortedList",
+  components: { Icon, Draggable },
+  props: {
+    modelValue: {
+      type: Array,
+      default: () => []
+    }
+  },
+  emits: ["update:modelValue"],
+  setup(props, { emit }) {
+    const dragOptions = {
+      animation: 200,
+      fallbackTolerance: 1,
+      touchStartThreshold: 1,
+      easing: "cubic-bezier(0,0,1,1)",
+      forceFallback: true,
+      fallbackOnBody: true,
+      dragClass: "drag",
+      ghostClass: "ghost",
+      group: "description",
+      disabled: false
+    };
+    const items = computed({
+      get: () => props.modelValue,
+      set: (value) => {
+        emit("update:modelValue", value);
+      }
+    });
+    return { dragOptions, items };
+  }
+});
+var SortedList = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", render$i], ["__scopeId", "data-v-8cbc69f6"]]);
 const _withScopeId = (n2) => (pushScopeId("data-v-5d8c1aaa"), n2 = n2(), popScopeId(), n2);
 const _hoisted_1$e = { class: "bubbles" };
 const _hoisted_2$c = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("span", null, null, -1));
@@ -12099,7 +12171,7 @@ const showTooltip = (tooltipOwner) => {
     return;
   const tooltip = Tooltip.render({ show: true, message: tooltipData.message });
   requestAnimationFrame(() => {
-    render$B(tooltip, tooltipOwner.parentNode);
+    render$C(tooltip, tooltipOwner.parentNode);
     tooltipData.popper = initPopper(tooltip.el, tooltipOwner);
   });
 };
@@ -12110,7 +12182,7 @@ const hideTooltip = (tooltipOwner) => {
   const tooltip = Tooltip.render({ show: false });
   requestAnimationFrame(() => {
     var _a;
-    render$B(tooltip, tooltipOwner.parentNode);
+    render$C(tooltip, tooltipOwner.parentNode);
     (_a = tooltipData.popper) == null ? void 0 : _a.destroy();
   });
 };
@@ -12144,7 +12216,7 @@ const observeDisabledAttribute = (tooltipOwner) => {
 const tooltipDirective = {
   mounted(tooltipOwner, binding) {
     const tooltip = Tooltip.render({ show: false });
-    render$B(tooltip, tooltipOwner.parentNode);
+    render$C(tooltip, tooltipOwner.parentNode);
     tooltipDataMap.set(tooltipOwner, {
       mutationObserver: observeDisabledAttribute(tooltipOwner),
       popper: null,
@@ -16347,4 +16419,4 @@ const _sfc_main = defineComponent({
   }
 });
 var Timer = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", render]]);
-export { BottomBar, Breadcrumbs, Bubbles, Button, Card, Checkbox, ClientPagination, Dropdown, DropdownOption, ExpansibleList, ExpansibleWrap, FileUpload, Filters, FixedBottomBar, Icon, Input, List, ListOption, MenuList, Messenger, Multiselect, PageShell, PageSidebar, Pagination, PaginationItem, Popup, ProgressBar, Select, ServerPagination, Shine, Table, TableDataSource, Tabs, Textarea, Timer, tooltipDirective as Tooltip, TransitionExpand, useMessenger, useProgressBar };
+export { BottomBar, Breadcrumbs, Bubbles, Button, Card, Checkbox, ClientPagination, Dropdown, DropdownOption, ExpansibleList, ExpansibleWrap, FileUpload, Filters, FixedBottomBar, Icon, Input, List, ListOption, MenuList, Messenger, Multiselect, PageShell, PageSidebar, Pagination, PaginationItem, Popup, ProgressBar, Select, ServerPagination, Shine, SortedList, Table, TableDataSource, Tabs, Textarea, Timer, tooltipDirective as Tooltip, TransitionExpand, useMessenger, useProgressBar };

@@ -1,4 +1,5 @@
 import { DefineComponent } from 'vue';
+import { Icon } from '@/components/icon/Icon';
 
 export type ButtonSize = 's' | 'm' | 'l';
 
@@ -8,7 +9,7 @@ declare const Button: DefineComponent<
   {
     size?: ButtonSize;
     mode?: ButtonMode;
-    icon?: Icon;
+    icon?: typeof Icon;
     loading?: boolean;
     iconOnly?: boolean;
   },

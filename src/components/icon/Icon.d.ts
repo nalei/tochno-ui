@@ -1,10 +1,12 @@
-import Vue from 'vue';
+import { DefineComponent } from 'vue';
 
-export interface Icon {
-  spriteUrl?: string;
-  name?: string;
-  url?: string;
-  color?: string;
-}
-
-export declare class Icon extends Vue {}
+declare const Icon: DefineComponent<
+  {
+    spriteUrl?: string;
+    name?: string;
+    url?: string;
+    color?: string;
+  },
+  Record<string, string>,
+  any
+>;

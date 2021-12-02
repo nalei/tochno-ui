@@ -1,4 +1,5 @@
-import { DefineComponent, Directive } from "vue";
+/* eslint-disable */
+import { DefineComponent, Directive } from 'vue';
 
 export type TableRow = Record<string, unknown>;
 export type TableDataRow<T> = T & { checked: boolean; _id: number };
@@ -48,6 +49,7 @@ export const ExpansibleList: DefineComponent;
 export const ExpansibleWrap: DefineComponent;
 export const List: DefineComponent;
 export const SortedList: DefineComponent;
+export const SortedList: DefineComponent;
 export const Bubbles: DefineComponent;
 export const Shine: DefineComponent;
 export const ListOption: DefineComponent;
@@ -67,5 +69,5 @@ export const Select: DefineComponent;
 export const Table: DefineComponent;
 export const Tabs: DefineComponent;
 export const Textarea: DefineComponent;
-export const Timer: DefineComponent;
+export const Timer: DefineComponent<{}, {}, any, any, { start: (deadline: number) => void }>;
 export const Tooltip: Directive<any, any>;
