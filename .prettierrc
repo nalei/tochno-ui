@@ -10,7 +10,7 @@
   "pugEmptyAttributes": "none",
   "pugAttributeSeparator": "none",
   "pugTabWidth": 2,
-  "pugSingleQuote": "true",
+  "pugSingleQuote": null,
   "pugWrapAttributesThreshold": 2,
   "pugBracketSameLine": false
 }

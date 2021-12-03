@@ -11,12 +11,12 @@
   )
     label.label.text-14px-medium(v-if='label && mode === "sort"') {{ label }}
     input.select-input.text-14px-regular(
+      @blur='onBlur'
       :value='active?.map((item) => item.label).join("/")'
       :tabindex='-1'
       :readonly='true'
       :placeholder='placeholder'
       :disabled='disabled'
-      @blur='onBlur'
     )
     Icon.arrow-icon(:name='mode === "sort" ? "ic24-sort" : "ic24-chevron-less-small"')
   Dropdown(

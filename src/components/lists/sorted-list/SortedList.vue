@@ -5,7 +5,7 @@ Draggable.dnd-list(
   itemKey='value'
 )
   template(#item='{ element, index }')
-    .dnd-list__row.dnd-list__draggable(:data-index="index")
+    .dnd-list__row.dnd-list__draggable(:data-index='index')
       .dnd-list__drag-icon
         Icon(name='ic24-drop')
       span.dnd-list_order-prefix.text-14px-regular {{ index + 1 }}.

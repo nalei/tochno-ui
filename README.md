@@ -40,8 +40,8 @@ Set up yours svg icons in `/src-icons` folder.
 yarn build:icons
 ```
 
-
 ## Сборка библиотеки компонентов
+
 ```bash
 npm run build:library
 

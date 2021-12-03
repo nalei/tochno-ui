@@ -5,12 +5,20 @@
       label.label.caption-13px-medium {{ label }}
     List(:data='list.initial' :class='{ "list-expanded": isShowAll }')
       template(#listItem='{ element, index }')
-        slot(name='listItem' :element='element' :index='index')
+        slot(
+          name='listItem'
+          :index='index'
+          :element='element'
+        )
     template(v-if='list.rest.length')
       TransitionExpand
         List.list-expand(v-show='isShowAll' :data='list.rest')
           template(#listItem='{ element, index }')
-            slot(name='listItem' :element='element' :index='list.initial.length + index')
+            slot(
+              name='listItem'
+              :index='list.initial.length + index'
+              :element='element'
+            )
     template(v-if='list.rest.length')
       .options-more-wrap
         .options-more(@click='onShowAll')

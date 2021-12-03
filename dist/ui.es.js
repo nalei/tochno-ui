@@ -16209,8 +16209,8 @@ function render$k(_ctx, _cache, $props, $setup, $data, $options) {
       }, {
         listItem: withCtx(({ element, index: index2 }) => [
           renderSlot(_ctx.$slots, "listItem", {
-            element,
-            index: index2
+            index: index2,
+            element
           }, void 0, true)
         ]),
         _: 3
@@ -16223,8 +16223,8 @@ function render$k(_ctx, _cache, $props, $setup, $data, $options) {
           }, {
             listItem: withCtx(({ element, index: index2 }) => [
               renderSlot(_ctx.$slots, "listItem", {
-                element,
-                index: _ctx.list.initial.length + index2
+                index: _ctx.list.initial.length + index2,
+                element
               }, void 0, true)
             ]),
             _: 3
@@ -16315,7 +16315,7 @@ const _sfc_main$k = defineComponent({
     };
   }
 });
-var ExpansibleList = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", render$k], ["__scopeId", "data-v-dd7d521c"]]);
+var ExpansibleList = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["render", render$k], ["__scopeId", "data-v-121176b2"]]);
 const _hoisted_1$g = {
   key: 0,
   class: "label caption-13px-medium"
@@ -26956,7 +26956,7 @@ var require$$1 = /* @__PURE__ */ getAugmentedNamespace(sortable_esm);
   });
 })(vuedraggable_umd);
 var Draggable = /* @__PURE__ */ getDefaultExportFromCjs(vuedraggable_umd.exports);
-const _withScopeId$1 = (n2) => (pushScopeId("data-v-8cbc69f6"), n2 = n2(), popScopeId(), n2);
+const _withScopeId$1 = (n2) => (pushScopeId("data-v-4911b2fb"), n2 = n2(), popScopeId(), n2);
 const _hoisted_1$f = ["data-index"];
 const _hoisted_2$d = { class: "dnd-list__drag-icon" };
 const _hoisted_3$c = { class: "dnd-list_order-prefix text-14px-regular" };
@@ -27026,7 +27026,7 @@ const _sfc_main$i = defineComponent({
     return { dragOptions, items };
   }
 });
-var SortedList = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", render$i], ["__scopeId", "data-v-8cbc69f6"]]);
+var SortedList = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["render", render$i], ["__scopeId", "data-v-4911b2fb"]]);
 const _withScopeId = (n2) => (pushScopeId("data-v-5d8c1aaa"), n2 = n2(), popScopeId(), n2);
 const _hoisted_1$e = { class: "bubbles" };
 const _hoisted_2$c = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("span", null, null, -1));
@@ -27621,12 +27621,12 @@ function render$b(_ctx, _cache, $props, $setup, $data, $options) {
       _ctx.label && _ctx.mode === "sort" ? (openBlock(), createElementBlock("label", _hoisted_3$8, toDisplayString(_ctx.label), 1)) : createCommentVNode("", true),
       createBaseVNode("input", {
         class: "select-input text-14px-regular",
+        onBlur: _cache[0] || (_cache[0] = (...args) => _ctx.onBlur && _ctx.onBlur(...args)),
         value: (_a = _ctx.active) == null ? void 0 : _a.map((item) => item.label).join("/"),
         tabindex: -1,
         readonly: true,
         placeholder: _ctx.placeholder,
-        disabled: _ctx.disabled,
-        onBlur: _cache[0] || (_cache[0] = (...args) => _ctx.onBlur && _ctx.onBlur(...args))
+        disabled: _ctx.disabled
       }, null, 40, _hoisted_4$5),
       createVNode(_component_Icon, {
         class: "arrow-icon",
@@ -27816,7 +27816,7 @@ const _sfc_main$b = defineComponent({
     };
   }
 });
-var Multiselect = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", render$b], ["__scopeId", "data-v-4c9e5b9a"]]);
+var Multiselect = /* @__PURE__ */ _export_sfc(_sfc_main$b, [["render", render$b], ["__scopeId", "data-v-6f59c0a5"]]);
 class TableDataSource {
   constructor(data, mapper) {
     __publicField(this, "perPage", 0);
