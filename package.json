@@ -10,7 +10,7 @@
     "types"
   ],
   "main": "dist/ui.umd.js",
-  "module": "dist/moon.es.js",
+  "module": "dist/ui.es.js",
   "types": "types/index.d.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -60,6 +60,8 @@
     "svg-sprite": "^1.5.0",
     "typescript": "^4.5.2",
     "vite": "^2.6.14",
+    "vite-plugin-dts": "^0.9.6",
+    "vite-plugin-generate-exports": "^0.0.2",
     "vue-jest": "^5.0.0-0"
   },
   "repository": {

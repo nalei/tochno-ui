@@ -111,7 +111,7 @@ button.pagination-item.page-number.text-14px-medium(
       cursor: default;
     }
     &:focus {
-      //box-shadow: 0 0 0 2px var(--blue-500);
+      /* box-shadow: 0 0 0 2px var(--blue-500); */
     }
   }
   .page-number {

@@ -312,11 +312,7 @@
     }
 
     &__value {
-      //max-width: 50vw;
-      //word-break: break-all; /* for ff */
-      //word-break: break-word; /* for chrome */
-      //word-wrap: break-word; /* for ff */
-      overflow-x: hidden; /* for ff */
+      overflow-x: hidden;
     }
   }
 

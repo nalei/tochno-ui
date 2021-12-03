@@ -1,33 +1,31 @@
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
+import dts from 'vite-plugin-dts';
 
-// https://vitejs.dev/config/
+
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    {
+      ...dts({
+        skipDiagnostics: false,
+        logDiagnostics: true,
+        outputDir: './types',
+      })
+    },
+  ],
   build: {
     assetsDir: 'public',
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ui',
     },
-    rollupOptions: {
-      // make sure to externalize deps that shouldn't be bundled
-      // into your library
-      external: ['vue', 'vuedraggable'],
-      output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
-        globals: {
-          vue: 'Vue',
-        },
-      },
-    },
-    minify: false,
+    minify: true,
   },
   resolve: {
     alias: {
-      '@': resolve(__dirname, './src'),
+      '@': resolve(__dirname, 'src'),
     },
   },
 });
