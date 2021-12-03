@@ -1,18 +1,9 @@
 <template lang="pug">
-Button.demo-button(size='l' mode='primary') Button
+.h-500 Coming soon
 </template>
 
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import Button from '@/components/button/Button.vue';
 
-  export default defineComponent({
-    components: { Button },
-  });
+  export default defineComponent({});
 </script>
-
-<style scoped>
-  .demo-button {
-    max-width: 100px;
-  }
-</style>

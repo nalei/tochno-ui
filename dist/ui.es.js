@@ -828,7 +828,7 @@ const shallowSet = /* @__PURE__ */ createSetter(true);
 function createSetter(shallow = false) {
   return function set2(target2, key, value, receiver) {
     let oldValue = target2[key];
-    if (!shallow) {
+    if (!shallow && !isReadonly(value)) {
       value = toRaw(value);
       oldValue = toRaw(oldValue);
       if (!isArray(target2) && isRef(oldValue) && !isRef(value)) {
@@ -2524,7 +2524,7 @@ function registerKeepAliveHook(hook, type, target2 = currentInstance) {
       }
       current = current.parent;
     }
-    hook();
+    return hook();
   });
   injectHook(type, wrappedHook, target2);
   if (target2) {
@@ -5006,29 +5006,29 @@ const PublicInstanceProxyHandlers = {
       const n2 = accessCache[key];
       if (n2 !== void 0) {
         switch (n2) {
-          case 0:
-            return setupState[key];
           case 1:
-            return data[key];
-          case 3:
-            return ctx[key];
+            return setupState[key];
           case 2:
+            return data[key];
+          case 4:
+            return ctx[key];
+          case 3:
             return props[key];
         }
       } else if (setupState !== EMPTY_OBJ && hasOwn(setupState, key)) {
-        accessCache[key] = 0;
+        accessCache[key] = 1;
         return setupState[key];
       } else if (data !== EMPTY_OBJ && hasOwn(data, key)) {
-        accessCache[key] = 1;
+        accessCache[key] = 2;
         return data[key];
       } else if ((normalizedProps = instance.propsOptions[0]) && hasOwn(normalizedProps, key)) {
-        accessCache[key] = 2;
+        accessCache[key] = 3;
         return props[key];
       } else if (ctx !== EMPTY_OBJ && hasOwn(ctx, key)) {
-        accessCache[key] = 3;
+        accessCache[key] = 4;
         return ctx[key];
       } else if (shouldCacheAccess) {
-        accessCache[key] = 4;
+        accessCache[key] = 0;
       }
     }
     const publicGetter = publicPropertiesMap[key];
@@ -5041,7 +5041,7 @@ const PublicInstanceProxyHandlers = {
     } else if ((cssModule = type.__cssModules) && (cssModule = cssModule[key])) {
       return cssModule;
     } else if (ctx !== EMPTY_OBJ && hasOwn(ctx, key)) {
-      accessCache[key] = 3;
+      accessCache[key] = 4;
       return ctx[key];
     } else if (globalProperties = appContext.config.globalProperties, hasOwn(globalProperties, key)) {
       {
@@ -5070,7 +5070,7 @@ const PublicInstanceProxyHandlers = {
   },
   has({ _: { data, setupState, accessCache, ctx, appContext, propsOptions } }, key) {
     let normalizedProps;
-    return accessCache[key] !== void 0 || data !== EMPTY_OBJ && hasOwn(data, key) || setupState !== EMPTY_OBJ && hasOwn(setupState, key) || (normalizedProps = propsOptions[0]) && hasOwn(normalizedProps, key) || hasOwn(ctx, key) || hasOwn(publicPropertiesMap, key) || hasOwn(appContext.config.globalProperties, key);
+    return !!accessCache[key] || data !== EMPTY_OBJ && hasOwn(data, key) || setupState !== EMPTY_OBJ && hasOwn(setupState, key) || (normalizedProps = propsOptions[0]) && hasOwn(normalizedProps, key) || hasOwn(ctx, key) || hasOwn(publicPropertiesMap, key) || hasOwn(appContext.config.globalProperties, key);
   }
 };
 const RuntimeCompiledPublicInstanceProxyHandlers = /* @__PURE__ */ extend$1({}, PublicInstanceProxyHandlers, {
@@ -5902,7 +5902,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-const version$1 = "3.2.22";
+const version$1 = "3.2.23";
 const _ssrUtils = {
   createComponentInstance,
   setupComponent,
@@ -6081,10 +6081,10 @@ function patchDOMProp(el2, key, value, prevChildren, parentComponent, parentSusp
     el2[key] = value == null ? "" : value;
     return;
   }
-  if (key === "value" && el2.tagName !== "PROGRESS") {
+  if (key === "value" && el2.tagName !== "PROGRESS" && !el2.tagName.includes("-")) {
     el2._value = value;
     const newValue = value == null ? "" : value;
-    if (el2.value !== newValue) {
+    if (el2.value !== newValue || el2.tagName === "OPTION") {
       el2.value = newValue;
     }
     if (value == null) {
@@ -13322,6 +13322,9 @@ function cloneNode(node2, recursive) {
     children.forEach(function(child) {
       return child.parent = clone_1;
     });
+    if (node2.namespace != null) {
+      clone_1.namespace = node2.namespace;
+    }
     if (node2["x-attribsNamespace"]) {
       clone_1["x-attribsNamespace"] = __assign$1({}, node2["x-attribsNamespace"]);
     }
@@ -13355,10 +13358,13 @@ function cloneNode(node2, recursive) {
     }
     result = instruction;
   } else {
-    throw new Error("Not implemented yet: " + node2.type);
+    throw new Error("Not implemented yet: ".concat(node2.type));
   }
   result.startIndex = node2.startIndex;
   result.endIndex = node2.endIndex;
+  if (node2.sourceCodeLocation != null) {
+    result.sourceCodeLocation = node2.sourceCodeLocation;
+  }
   return result;
 }
 node.cloneNode = cloneNode;
@@ -28870,10 +28876,26 @@ var applyStyles$1 = {
 function getBasePlacement(placement) {
   return placement.split("-")[0];
 }
+var max = Math.max;
+var min = Math.min;
+var round = Math.round;
 function getBoundingClientRect(element, includeScale) {
+  if (includeScale === void 0) {
+    includeScale = false;
+  }
   var rect2 = element.getBoundingClientRect();
   var scaleX = 1;
   var scaleY = 1;
+  if (isHTMLElement(element) && includeScale) {
+    var offsetHeight = element.offsetHeight;
+    var offsetWidth = element.offsetWidth;
+    if (offsetWidth > 0) {
+      scaleX = round(rect2.width) / offsetWidth || 1;
+    }
+    if (offsetHeight > 0) {
+      scaleY = round(rect2.height) / offsetHeight || 1;
+    }
+  }
   return {
     width: rect2.width / scaleX,
     height: rect2.height / scaleY,
@@ -28972,11 +28994,12 @@ function getOffsetParent(element) {
 function getMainAxisFromPlacement(placement) {
   return ["top", "bottom"].indexOf(placement) >= 0 ? "x" : "y";
 }
-var max = Math.max;
-var min = Math.min;
-var round = Math.round;
 function within(min$1, value, max$1) {
   return max(min$1, min(value, max$1));
+}
+function withinMaxClamp(min2, value, max2) {
+  var v2 = within(min2, value, max2);
+  return v2 > max2 ? max2 : v2;
 }
 function getFreshSideObject() {
   return {
@@ -29069,13 +29092,13 @@ function roundOffsetsByDPR(_ref) {
   var win = window;
   var dpr = win.devicePixelRatio || 1;
   return {
-    x: round(round(x * dpr) / dpr) || 0,
-    y: round(round(y * dpr) / dpr) || 0
+    x: round(x * dpr) / dpr || 0,
+    y: round(y * dpr) / dpr || 0
   };
 }
 function mapToStyles(_ref2) {
   var _Object$assign2;
-  var popper2 = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, variation = _ref2.variation, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets;
+  var popper2 = _ref2.popper, popperRect = _ref2.popperRect, placement = _ref2.placement, variation = _ref2.variation, offsets = _ref2.offsets, position = _ref2.position, gpuAcceleration = _ref2.gpuAcceleration, adaptive = _ref2.adaptive, roundOffsets = _ref2.roundOffsets, isFixed = _ref2.isFixed;
   var _ref3 = roundOffsets === true ? roundOffsetsByDPR(offsets) : typeof roundOffsets === "function" ? roundOffsets(offsets) : offsets, _ref3$x = _ref3.x, x = _ref3$x === void 0 ? 0 : _ref3$x, _ref3$y = _ref3.y, y = _ref3$y === void 0 ? 0 : _ref3$y;
   var hasX = offsets.hasOwnProperty("x");
   var hasY = offsets.hasOwnProperty("y");
@@ -29096,12 +29119,14 @@ function mapToStyles(_ref2) {
     offsetParent = offsetParent;
     if (placement === top || (placement === left || placement === right) && variation === end) {
       sideY = bottom;
-      y -= offsetParent[heightProp] - popperRect.height;
+      var offsetY = isFixed && win.visualViewport ? win.visualViewport.height : offsetParent[heightProp];
+      y -= offsetY - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
     }
     if (placement === left || (placement === top || placement === bottom) && variation === end) {
       sideX = right;
-      x -= offsetParent[widthProp] - popperRect.width;
+      var offsetX = isFixed && win.visualViewport ? win.visualViewport.width : offsetParent[widthProp];
+      x -= offsetX - popperRect.width;
       x *= gpuAcceleration ? 1 : -1;
     }
   }
@@ -29122,7 +29147,8 @@ function computeStyles(_ref4) {
     variation: getVariation(state.placement),
     popper: state.elements.popper,
     popperRect: state.rects.popper,
-    gpuAcceleration
+    gpuAcceleration,
+    isFixed: state.options.strategy === "fixed"
   };
   if (state.modifiersData.popperOffsets != null) {
     state.styles.popper = Object.assign({}, state.styles.popper, mapToStyles(Object.assign({}, commonStyles, {
@@ -29307,7 +29333,7 @@ function getInnerBoundingClientRect(element) {
   return rect2;
 }
 function getClientRectFromMixedType(element, clippingParent) {
-  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isHTMLElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
+  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
 }
 function getClippingParents(element) {
   var clippingParents2 = listScrollParents(getParentNode(element));
@@ -29317,7 +29343,7 @@ function getClippingParents(element) {
     return [];
   }
   return clippingParents2.filter(function(clippingParent) {
-    return isElement(clippingParent) && contains(clippingParent, clipperElement) && getNodeName(clippingParent) !== "body";
+    return isElement(clippingParent) && contains(clippingParent, clipperElement) && getNodeName(clippingParent) !== "body" && (canEscapeClipping ? getComputedStyle$1(clippingParent).position !== "static" : true);
   });
 }
 function getClippingRect(element, boundary, rootBoundary) {
@@ -29686,6 +29712,14 @@ function preventOverflow(_ref) {
   var tetherOffsetValue = typeof tetherOffset === "function" ? tetherOffset(Object.assign({}, state.rects, {
     placement: state.placement
   })) : tetherOffset;
+  var normalizedTetherOffsetValue = typeof tetherOffsetValue === "number" ? {
+    mainAxis: tetherOffsetValue,
+    altAxis: tetherOffsetValue
+  } : Object.assign({
+    mainAxis: 0,
+    altAxis: 0
+  }, tetherOffsetValue);
+  var offsetModifierState = state.modifiersData.offset ? state.modifiersData.offset[state.placement] : null;
   var data = {
     x: 0,
     y: 0
@@ -29693,13 +29727,14 @@ function preventOverflow(_ref) {
   if (!popperOffsets2) {
     return;
   }
-  if (checkMainAxis || checkAltAxis) {
+  if (checkMainAxis) {
+    var _offsetModifierState$;
     var mainSide = mainAxis === "y" ? top : left;
     var altSide = mainAxis === "y" ? bottom : right;
     var len = mainAxis === "y" ? "height" : "width";
     var offset2 = popperOffsets2[mainAxis];
-    var min$1 = popperOffsets2[mainAxis] + overflow[mainSide];
-    var max$1 = popperOffsets2[mainAxis] - overflow[altSide];
+    var min$1 = offset2 + overflow[mainSide];
+    var max$1 = offset2 - overflow[altSide];
     var additive = tether ? -popperRect[len] / 2 : 0;
     var minLen = variation === start ? referenceRect[len] : popperRect[len];
     var maxLen = variation === start ? -popperRect[len] : -referenceRect[len];
@@ -29712,28 +29747,32 @@ function preventOverflow(_ref) {
     var arrowPaddingMin = arrowPaddingObject[mainSide];
     var arrowPaddingMax = arrowPaddingObject[altSide];
     var arrowLen = within(0, referenceRect[len], arrowRect[len]);
-    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - tetherOffsetValue : minLen - arrowLen - arrowPaddingMin - tetherOffsetValue;
-    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + tetherOffsetValue : maxLen + arrowLen + arrowPaddingMax + tetherOffsetValue;
+    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis : minLen - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis;
+    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis : maxLen + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis;
     var arrowOffsetParent = state.elements.arrow && getOffsetParent(state.elements.arrow);
     var clientOffset = arrowOffsetParent ? mainAxis === "y" ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
-    var offsetModifierValue = state.modifiersData.offset ? state.modifiersData.offset[state.placement][mainAxis] : 0;
-    var tetherMin = popperOffsets2[mainAxis] + minOffset - offsetModifierValue - clientOffset;
-    var tetherMax = popperOffsets2[mainAxis] + maxOffset - offsetModifierValue;
-    if (checkMainAxis) {
-      var preventedOffset = within(tether ? min(min$1, tetherMin) : min$1, offset2, tether ? max(max$1, tetherMax) : max$1);
-      popperOffsets2[mainAxis] = preventedOffset;
-      data[mainAxis] = preventedOffset - offset2;
-    }
-    if (checkAltAxis) {
-      var _mainSide = mainAxis === "x" ? top : left;
-      var _altSide = mainAxis === "x" ? bottom : right;
-      var _offset = popperOffsets2[altAxis];
-      var _min = _offset + overflow[_mainSide];
-      var _max = _offset - overflow[_altSide];
-      var _preventedOffset = within(tether ? min(_min, tetherMin) : _min, _offset, tether ? max(_max, tetherMax) : _max);
-      popperOffsets2[altAxis] = _preventedOffset;
-      data[altAxis] = _preventedOffset - _offset;
-    }
+    var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
+    var tetherMin = offset2 + minOffset - offsetModifierValue - clientOffset;
+    var tetherMax = offset2 + maxOffset - offsetModifierValue;
+    var preventedOffset = within(tether ? min(min$1, tetherMin) : min$1, offset2, tether ? max(max$1, tetherMax) : max$1);
+    popperOffsets2[mainAxis] = preventedOffset;
+    data[mainAxis] = preventedOffset - offset2;
+  }
+  if (checkAltAxis) {
+    var _offsetModifierState$2;
+    var _mainSide = mainAxis === "x" ? top : left;
+    var _altSide = mainAxis === "x" ? bottom : right;
+    var _offset = popperOffsets2[altAxis];
+    var _len = altAxis === "y" ? "height" : "width";
+    var _min = _offset + overflow[_mainSide];
+    var _max = _offset - overflow[_altSide];
+    var isOriginSide = [top, left].indexOf(basePlacement) !== -1;
+    var _offsetModifierValue = (_offsetModifierState$2 = offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) != null ? _offsetModifierState$2 : 0;
+    var _tetherMin = isOriginSide ? _min : _offset - referenceRect[_len] - popperRect[_len] - _offsetModifierValue + normalizedTetherOffsetValue.altAxis;
+    var _tetherMax = isOriginSide ? _offset + referenceRect[_len] + popperRect[_len] - _offsetModifierValue - normalizedTetherOffsetValue.altAxis : _max;
+    var _preventedOffset = tether && isOriginSide ? withinMaxClamp(_tetherMin, _offset, _tetherMax) : within(tether ? _tetherMin : _min, _offset, tether ? _tetherMax : _max);
+    popperOffsets2[altAxis] = _preventedOffset;
+    data[altAxis] = _preventedOffset - _offset;
   }
   state.modifiersData[name] = data;
 }
@@ -29759,8 +29798,8 @@ function getNodeScroll(node2) {
 }
 function isElementScaled(element) {
   var rect2 = element.getBoundingClientRect();
-  var scaleX = rect2.width / element.offsetWidth || 1;
-  var scaleY = rect2.height / element.offsetHeight || 1;
+  var scaleX = round(rect2.width) / element.offsetWidth || 1;
+  var scaleY = round(rect2.height) / element.offsetHeight || 1;
   return scaleX !== 1 || scaleY !== 1;
 }
 function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
@@ -29768,9 +29807,9 @@ function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
     isFixed = false;
   }
   var isOffsetParentAnElement = isHTMLElement(offsetParent);
-  isHTMLElement(offsetParent) && isElementScaled(offsetParent);
+  var offsetParentIsScaled = isHTMLElement(offsetParent) && isElementScaled(offsetParent);
   var documentElement = getDocumentElement(offsetParent);
-  var rect2 = getBoundingClientRect(elementOrVirtualElement);
+  var rect2 = getBoundingClientRect(elementOrVirtualElement, offsetParentIsScaled);
   var scroll = {
     scrollLeft: 0,
     scrollTop: 0
@@ -29784,7 +29823,7 @@ function getCompositeRect(elementOrVirtualElement, offsetParent, isFixed) {
       scroll = getNodeScroll(offsetParent);
     }
     if (isHTMLElement(offsetParent)) {
-      offsets = getBoundingClientRect(offsetParent);
+      offsets = getBoundingClientRect(offsetParent, true);
       offsets.x += offsetParent.clientLeft;
       offsets.y += offsetParent.clientTop;
     } else if (documentElement) {
