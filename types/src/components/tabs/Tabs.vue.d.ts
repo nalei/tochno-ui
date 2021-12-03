@@ -25,14 +25,14 @@ declare const _default: import("vue").DefineComponent<{
     size?: unknown;
 } & {
     size: SelectSize;
-    activeItem: number;
     items: TabsItem[];
+    activeItem: number;
 } & {}> & {
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:activeItem"?: ((...args: any[]) => any) | undefined;
 }, {
     size: SelectSize;
-    activeItem: number;
     items: TabsItem[];
+    activeItem: number;
 }>;
 export default _default;

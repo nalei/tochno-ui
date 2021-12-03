@@ -1,4 +1,3 @@
-/* eslint-disable */
 import { DefineComponent } from 'vue';
 
 export type ButtonSize = 's' | 'm' | 'l';
@@ -13,7 +12,7 @@ declare const Button: DefineComponent<
     loading?: boolean;
     iconOnly?: boolean;
   },
-  {},
+  Record<string, string>,
   any
 >;
 

@@ -6,5 +6,3 @@ export interface Icon {
   url?: string;
   color?: string;
 }
-
-export declare class Icon extends Vue {}
