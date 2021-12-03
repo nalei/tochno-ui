@@ -20,6 +20,18 @@ export default defineConfig({
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ui',
     },
+    rollupOptions: {
+      // make sure to externalize deps that shouldn't be bundled
+      // into your library
+      external: ['vue', 'vuedraggable'],
+      output: {
+        // Provide global variables to use in the UMD build
+        // for externalized deps
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
     minify: true,
   },
   resolve: {
