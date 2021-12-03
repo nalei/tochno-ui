@@ -1,7 +1,7 @@
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
-import typescript2 from 'rollup-plugin-typescript2';
+// import typescript2 from 'rollup-plugin-typescript2';
 import dts from 'vite-plugin-dts';
 // import GenerateExports from 'vite-plugin-generate-exports'
 
@@ -45,7 +45,7 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'ui',
-      formats: ['es'],
+      // formats: ['es'],
     },
     // rollupOptions: {
     //   external: ['vue'],
@@ -59,7 +59,7 @@ export default defineConfig({
     //     },
     //   },
     // },
-    minify: false,
+    minify: true,
   },
   resolve: {
     alias: {
