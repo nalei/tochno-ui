@@ -1,50 +1,44 @@
-# manage-web-ui
+<h1 align="center">Tochno UI</h1>
 
-## Building
+<p align="center">Tochno UI - A Vue.js 3 UI library made by <a href='https://tochno.pro'>Tochno</a></p>
 
+## Installation
+
+Install package in your project:
 ```bash
-# clone repo
-git clone https://gitlab.com/somersetinc/manage-web-ui.git
+# npm
+npm i @tochno/ui
 
-# install dependencies
-yarn install
-
-# serve with hot reload at localhost:8080
-yarn serve
-
-# build for production with minification
-yarn build
+# or yarn
+yarn add @tochno/ui
+```
+Import stylesheet file:
+```css
+@import url('~@tochno/ui/dist/style.css');
 ```
 
-## Linting & Formatting
+## Usage
+```javascript
+// vue3/App.vue
+<template>
+  <div>
+    <Button>Click me</Button>
+  </div>
+</template>
 
-```bash
-# Lint all files, fixing many violations automatically
-yarn lint
-
-# Formatting all files with Prettier
-yarn format
+<script lang="ts">
+  import { defineComponent } from 'vue'
+  import { Button } from '@tochno/ui'
+  
+  export default defineComponent({
+    name: 'App',
+    components: { Button },
+    setup() {},
+  })
+</script>
 ```
 
-## Pre-commit
-
-Staged files are automatically linted and formatted before each commit. See lint-staged config in `package.json` to update.
-[Husky](https://github.com/typicode/husky) is used to install the pre-commit hook.
-
-## Icons/SVG:
-
-Set up yours svg icons in `/src-icons` folder.
-
-```bash
-# Generate new icons-sprite.svg from /src-icons folder
-yarn build:icons
-```
-
-## Сборка библиотеки компонентов
-
-```bash
-npm run build:library
-
-# or
-npx vite build
-```
+## License
+<ul>
+    <li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li>
+</ul>
