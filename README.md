@@ -2,7 +2,7 @@
 
 Tochno UI - A Vue.js 3 UI library made by [Tochno](https://tochno.pro/)
 
----
+[![Build Status](https://app.travis-ci.com/somersetinc/manage-web-ui.svg?token=ufjvYfS73fhVZjXzGXAn&branch=main)](https://app.travis-ci.com/somersetinc/manage-web-ui)
 
 ## Installation
 
