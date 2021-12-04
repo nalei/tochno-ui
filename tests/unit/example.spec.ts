@@ -1,12 +1,12 @@
 import { shallowMount } from '@vue/test-utils';
-import HelloWorld from '@/components/HelloWorld.vue';
+import Button from '@/components/button/Button.vue';
 
-describe('HelloWorld.vue', () => {
-  it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg },
+describe('Button.vue', () => {
+  it('renders props.mode when passe', () => {
+    const mode = 'secondary';
+    const wrapper = shallowMount(Button, {
+      props: { mode },
     });
-    expect(wrapper.text()).toMatch(msg);
+    expect(wrapper.find('.button').classes()).toContain('secondary');
   });
 });

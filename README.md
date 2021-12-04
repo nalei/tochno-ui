@@ -1,6 +1,8 @@
-<h1 align="center">Tochno UI</h1>
+# Tochno UI
 
-<p align="center">Tochno UI - A Vue.js 3 UI library made by <a href='https://tochno.pro'>Tochno</a></p>
+Tochno UI - A Vue.js 3 UI library made by [Tochno](https://tochno.pro/)
+
+---
 
 ## Installation
 
@@ -18,7 +20,7 @@ Import stylesheet file:
 ```
 
 ## Usage
-```javascript
+```vue
 // vue3/App.vue
 <template>
   <div>
@@ -39,6 +41,4 @@ Import stylesheet file:
 ```
 
 ## License
-<ul>
-    <li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li>
-</ul>
+* [MIT License](http://spdx.org/licenses/MIT.html)
