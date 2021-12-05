@@ -33,7 +33,7 @@ ul.menu-list(:class='menuListClasses')
 </template>
 
 <script lang="ts">
-  import { computed, defineComponent, ref, PropType, watch, nextTick, onMounted } from 'vue';
+  import { computed, defineComponent, ref, PropType, watch, nextTick } from 'vue';
   import { useRoute } from 'vue-router';
   import Icon from '@/components/icon/Icon.vue';
   import ListOption from '@/components/menu/ListOption.vue';
@@ -67,7 +67,6 @@ ul.menu-list(:class='menuListClasses')
       },
     },
     setup(props) {
-      const route = useRoute();
       const activeOptionIndex = ref(-1);
 
       const activeLi = ref<HTMLLIElement | null>(null);

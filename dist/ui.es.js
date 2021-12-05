@@ -33,7 +33,7 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-import { openBlock, createBlock, Transition, withCtx, createElementBlock, createElementVNode, renderSlot, createCommentVNode, defineComponent, Fragment, normalizeClass, pushScopeId, popScopeId, ref, computed, onMounted, mergeProps, watch, resolveComponent, renderList, createVNode, resolveDynamicComponent, createTextVNode, toDisplayString, withDirectives, vShow, normalizeStyle, withKeys, withModifiers, resolveDirective, vModelDynamic, inject, normalizeProps, nextTick, TransitionGroup, toRef, onBeforeUnmount, vModelText, reactive, render as render$C } from "vue";
+import { openBlock, createBlock, Transition, withCtx, createElementBlock, createElementVNode, renderSlot, createCommentVNode, defineComponent, Fragment, normalizeClass, pushScopeId, popScopeId, ref, computed, onMounted, mergeProps, watch, resolveComponent, renderList, createVNode, resolveDynamicComponent, createTextVNode, toDisplayString, withDirectives, vShow, normalizeStyle, withKeys, withModifiers, resolveDirective, vModelDynamic, normalizeProps, nextTick, TransitionGroup, toRef, onBeforeUnmount, vModelText, reactive, render as render$C } from "vue";
 import Draggable from "vuedraggable";
 var common = "";
 const _hoisted_1$w = {
@@ -9285,34 +9285,6 @@ const _sfc_main$f = defineComponent({
   }
 });
 var ListOption = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["render", render$f], ["__scopeId", "data-v-1f8027e0"]]);
-/*!
-  * vue-router v4.0.12
-  * (c) 2021 Eduardo San Martin Morote
-  * @license MIT
-  */
-const hasSymbol = typeof Symbol === "function" && typeof Symbol.toStringTag === "symbol";
-const PolySymbol = (name) => hasSymbol ? Symbol(name) : "_vr_" + name;
-const routeLocationKey = /* @__PURE__ */ PolySymbol("rl");
-var NavigationType;
-(function(NavigationType2) {
-  NavigationType2["pop"] = "pop";
-  NavigationType2["push"] = "push";
-})(NavigationType || (NavigationType = {}));
-var NavigationDirection;
-(function(NavigationDirection2) {
-  NavigationDirection2["back"] = "back";
-  NavigationDirection2["forward"] = "forward";
-  NavigationDirection2["unknown"] = "";
-})(NavigationDirection || (NavigationDirection = {}));
-var NavigationFailureType;
-(function(NavigationFailureType2) {
-  NavigationFailureType2[NavigationFailureType2["aborted"] = 4] = "aborted";
-  NavigationFailureType2[NavigationFailureType2["cancelled"] = 8] = "cancelled";
-  NavigationFailureType2[NavigationFailureType2["duplicated"] = 16] = "duplicated";
-})(NavigationFailureType || (NavigationFailureType = {}));
-function useRoute() {
-  return inject(routeLocationKey);
-}
 function render$e(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
   const _component_ListOption = resolveComponent("ListOption");
@@ -9396,7 +9368,6 @@ const _sfc_main$e = defineComponent({
     }
   },
   setup(props) {
-    useRoute();
     const activeOptionIndex = ref(-1);
     const activeLi = ref(null);
     const markerTranslate = ref(0);
@@ -9478,7 +9449,7 @@ const _sfc_main$e = defineComponent({
     return { activeOptionIndex, menuListClasses, markerTranslate, activeLi, expandSubmenu, onPageUp, onPageDown };
   }
 });
-var MenuList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", render$e], ["__scopeId", "data-v-7ff9a9b7"]]);
+var MenuList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", render$e], ["__scopeId", "data-v-65f718e9"]]);
 class Timeout {
   constructor(callback, timeout) {
     __publicField(this, "timer", 0);
