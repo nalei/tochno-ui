@@ -85,18 +85,6 @@ ul.menu-list(:class='menuListClasses')
         activeOptionIndex.value = activeOptionIndex.value === index ? -1 : index;
       };
 
-      onMounted(() => {
-        props.options.forEach((el, i) => {
-          if (el.children) {
-            el.children.forEach((p) => {
-              if (p.href === route.path) {
-                activeOptionIndex.value = i;
-              }
-            });
-          }
-        });
-      });
-
       const onPageUp = (e: Event) => {
         const parent = (e.target as Element).parentElement;
         if (!parent) {

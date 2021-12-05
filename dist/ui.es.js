@@ -9396,7 +9396,7 @@ const _sfc_main$e = defineComponent({
     }
   },
   setup(props) {
-    const route = useRoute();
+    useRoute();
     const activeOptionIndex = ref(-1);
     const activeLi = ref(null);
     const markerTranslate = ref(0);
@@ -9409,17 +9409,6 @@ const _sfc_main$e = defineComponent({
     const expandSubmenu = (index) => {
       activeOptionIndex.value = activeOptionIndex.value === index ? -1 : index;
     };
-    onMounted(() => {
-      props.options.forEach((el2, i2) => {
-        if (el2.children) {
-          el2.children.forEach((p2) => {
-            if (p2.href === route.path) {
-              activeOptionIndex.value = i2;
-            }
-          });
-        }
-      });
-    });
     const onPageUp = (e2) => {
       var _a;
       const parent = e2.target.parentElement;
@@ -9489,7 +9478,7 @@ const _sfc_main$e = defineComponent({
     return { activeOptionIndex, menuListClasses, markerTranslate, activeLi, expandSubmenu, onPageUp, onPageDown };
   }
 });
-var MenuList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", render$e], ["__scopeId", "data-v-a303f87a"]]);
+var MenuList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", render$e], ["__scopeId", "data-v-7ff9a9b7"]]);
 class Timeout {
   constructor(callback, timeout) {
     __publicField(this, "timer", 0);
