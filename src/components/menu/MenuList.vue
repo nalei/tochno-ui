@@ -33,8 +33,7 @@ ul.menu-list(:class='menuListClasses')
 </template>
 
 <script lang="ts">
-  import { computed, defineComponent, ref, PropType, watch, nextTick } from 'vue';
-  import { useRoute } from 'vue-router';
+  import { computed, defineComponent, ref, PropType, watch, nextTick, onMounted } from 'vue';
   import Icon from '@/components/icon/Icon.vue';
   import ListOption from '@/components/menu/ListOption.vue';
   import TransitionExpand from '@/components/menu/TransitionExpand.vue';
@@ -75,6 +74,14 @@ ul.menu-list(:class='menuListClasses')
       const menuListClasses = computed(() => ({
         [props.mode]: props.mode !== 'desktop',
       }));
+
+      onMounted(() => {
+        props.options.forEach((el, index) => {
+          if (el.active) {
+            activeOptionIndex.value = index;
+          }
+        });
+      });
 
       watch([activeLi, () => props.mode], ([value, mode]) => {
         nextTick(() => (markerTranslate.value = value && mode === 'tablet' ? value?.offsetTop : 0));

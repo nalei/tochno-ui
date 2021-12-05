@@ -9374,6 +9374,13 @@ const _sfc_main$e = defineComponent({
     const menuListClasses = computed(() => ({
       [props.mode]: props.mode !== "desktop"
     }));
+    onMounted(() => {
+      props.options.forEach((el2, index) => {
+        if (el2.active) {
+          activeOptionIndex.value = index;
+        }
+      });
+    });
     watch([activeLi, () => props.mode], ([value, mode]) => {
       nextTick(() => markerTranslate.value = value && mode === "tablet" ? value == null ? void 0 : value.offsetTop : 0);
     });
@@ -9449,7 +9456,7 @@ const _sfc_main$e = defineComponent({
     return { activeOptionIndex, menuListClasses, markerTranslate, activeLi, expandSubmenu, onPageUp, onPageDown };
   }
 });
-var MenuList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", render$e], ["__scopeId", "data-v-65f718e9"]]);
+var MenuList = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["render", render$e], ["__scopeId", "data-v-2542ae17"]]);
 class Timeout {
   constructor(callback, timeout) {
     __publicField(this, "timer", 0);
