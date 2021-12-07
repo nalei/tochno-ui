@@ -33,7 +33,7 @@ var __publicField = (obj, key, value) => {
   __defNormalProp(obj, typeof key !== "symbol" ? key + "" : key, value);
   return value;
 };
-import { openBlock, createBlock, Transition, withCtx, createElementBlock, createElementVNode, renderSlot, createCommentVNode, defineComponent, Fragment, normalizeClass, pushScopeId, popScopeId, ref, computed, onMounted, mergeProps, watch, resolveComponent, renderList, createVNode, resolveDynamicComponent, createTextVNode, toDisplayString, withDirectives, vShow, normalizeStyle, withKeys, withModifiers, resolveDirective, vModelDynamic, normalizeProps, nextTick, TransitionGroup, toRef, onBeforeUnmount, vModelText, reactive, render as render$C } from "vue";
+import { openBlock, createBlock, Transition, withCtx, createElementBlock, createElementVNode, renderSlot, createCommentVNode, defineComponent, Fragment, normalizeClass, pushScopeId, popScopeId, ref, computed, onMounted, mergeProps, watch, resolveComponent, renderList, createVNode, resolveDynamicComponent, createTextVNode, toDisplayString, withDirectives, vShow, normalizeStyle, withKeys, withModifiers, resolveDirective, vModelDynamic, normalizeProps, nextTick, TransitionGroup, watchEffect, toRef, onBeforeUnmount, vModelText, reactive, render as render$C } from "vue";
 import Draggable from "vuedraggable";
 var common = "";
 const _hoisted_1$w = {
@@ -9635,9 +9635,10 @@ const _hoisted_4$6 = { class: "popup-content" };
 const _hoisted_5$5 = { class: "popup-footer" };
 function render$c(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
-  return withDirectives((openBlock(), createElementBlock("div", {
-    class: "modal-wrapper",
-    onMousedown: _cache[1] || (_cache[1] = withModifiers(($event) => !_ctx.strict && _ctx.closePopup, ["self"]))
+  return _ctx.opened ? (openBlock(), createElementBlock("div", {
+    key: 0,
+    class: normalizeClass(["modal-wrapper", _ctx.wrapperClasses]),
+    onMousedown: _cache[1] || (_cache[1] = withModifiers((...args) => _ctx.onMousedownHandler && _ctx.onMousedownHandler(...args), ["self"]))
   }, [
     createElementVNode("div", {
       class: normalizeClass(["popup", _ctx.popupClasses])
@@ -9661,9 +9662,7 @@ function render$c(_ctx, _cache, $props, $setup, $data, $options) {
         ])
       ])
     ], 2)
-  ], 544)), [
-    [vShow, _ctx.opened]
-  ]);
+  ], 34)) : createCommentVNode("", true);
 }
 var Popup_vue_vue_type_style_index_0_lang = "";
 const _sfc_main$c = defineComponent({
@@ -9692,17 +9691,38 @@ const _sfc_main$c = defineComponent({
         const sizes = ["s", "m", "l"];
         return sizes.includes(value);
       }
+    },
+    mode: {
+      type: String,
+      default: "notice",
+      validator: (value) => {
+        return ["notice", "content"].includes(value);
+      }
     }
   },
   setup(props, { emit }) {
     const popupClasses = computed(() => ({
       [`${props.size}`]: true
     }));
+    const wrapperClasses = computed(() => {
+      if (props.mode === "content") {
+        return { content: true };
+      }
+      return { notice: true };
+    });
+    watchEffect(() => {
+      if (props.opened) {
+        document.documentElement.style.overflowY = "hidden";
+      } else {
+        document.documentElement.style.overflowY = "initial";
+      }
+    });
     const closePopup = () => {
       emit("update:opened", false);
       emit("close");
     };
-    return { popupClasses, closePopup };
+    const onMousedownHandler = () => !props.strict && closePopup();
+    return { popupClasses, wrapperClasses, closePopup, onMousedownHandler };
   }
 });
 var Popup = /* @__PURE__ */ _export_sfc(_sfc_main$c, [["render", render$c]]);
@@ -12594,8 +12614,9 @@ const _sfc_main$1 = defineComponent({
         [`${props.state}`]: true
       };
     });
-    onMounted(() => {
-      if (!textarea.value)
+    watchEffect(() => {
+      var _a;
+      if (!((_a = textarea.value) == null ? void 0 : _a.scrollHeight))
         return;
       adjustHeight(textarea.value);
     });
@@ -12628,7 +12649,7 @@ const _sfc_main$1 = defineComponent({
     };
   }
 });
-var Textarea = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1], ["__scopeId", "data-v-4637cd7c"]]);
+var Textarea = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", render$1], ["__scopeId", "data-v-2f3feed9"]]);
 class LuxonError extends Error {
 }
 class InvalidDateTimeError extends LuxonError {

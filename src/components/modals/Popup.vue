@@ -1,24 +1,24 @@
 <template lang="pug">
-  .modal-wrapper(
-    v-if='opened'
-    @mousedown.self='onMousedownHandler'
-    :class='wrapperClasses'
-  )
-    .popup(:class='popupClasses')
-      .popup-header
-        h4.popup-title.h-500(v-if='title') {{ title }}
-        .popup-close(v-if='!strict' @click.prevent.stop='closePopup')
-          Icon(name='ic24-close-delete')
-      .popup-body.scroll
-        .popup-content
-          slot
-        .popup-footer
-          slot(name='footer')
+.modal-wrapper(
+  v-if='opened'
+  @mousedown.self='onMousedownHandler'
+  :class='wrapperClasses'
+)
+  .popup(:class='popupClasses')
+    .popup-header
+      h4.popup-title.h-500(v-if='title') {{ title }}
+      .popup-close(v-if='!strict' @click.prevent.stop='closePopup')
+        Icon(name='ic24-close-delete')
+    .popup-body.scroll
+      .popup-content
+        slot
+      .popup-footer
+        slot(name='footer')
 </template>
 
 <script lang="ts">
   import { computed, defineComponent, PropType, watchEffect } from 'vue';
-  import Icon from '@/components/ui/icon/Icon.vue';
+  import Icon from '@/components/icon/Icon.vue';
   import { PopupSize, PopupMode } from '@/components/modals/Popup';
 
   export default defineComponent({
