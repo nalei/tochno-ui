@@ -10,7 +10,6 @@ svg.sui-icon(
   import { defineComponent, computed, ref, watch } from 'vue';
   import { parseDocument, ParserOptions, DomUtils } from 'htmlparser2';
   import { Element } from 'domhandler';
-  import svgSprite from '../../common/icons-sprite.svg';
 
   const PARSER_OPTIONS: ParserOptions = {
     xmlMode: true,
@@ -19,7 +18,7 @@ svg.sui-icon(
     lowerCaseAttributeNames: false,
   } as const;
 
-  const ICONS_SPRITE = { sprites: [svgSprite] };
+  const ICONS_SPRITE = { sprites: [require('../../common/icons-sprite.svg')] };
   const cacheMap = new Map<string, Promise<string>>();
   const parsedDocuments = new Map<string, Element[]>();
   const symbolsMap = new Map<string, string>();
@@ -94,19 +93,16 @@ svg.sui-icon(
     };
 
     const fetchSvg: (svgUrl: string) => Promise<string> = async (svgUrl) => {
-      // if (!cacheMap.has(svgUrl)) {
-      //   try {
-      //     cacheMap.set(svgUrl, 'caches' in window ? retrieveResponseFromCacheStorage(svgUrl) : fetch(svgUrl).then((r) => r.text()));
-      //   } catch (e) {
-      //     cacheMap.delete(svgUrl);
-      //   }
-      // }
-      //
-      // // eslint-disable-next-line
-      // return cacheMap.has(svgUrl) ? await cacheMap.get(svgUrl)! : Promise.reject(new Error('Error in fetching the SVG'));
+      if (!cacheMap.has(svgUrl)) {
+        try {
+          cacheMap.set(svgUrl, 'caches' in window ? retrieveResponseFromCacheStorage(svgUrl) : fetch(svgUrl).then((r) => r.text()));
+        } catch (e) {
+          cacheMap.delete(svgUrl);
+        }
+      }
 
-      const svg = await fetch(svgUrl);
-      return svg.text();
+      // eslint-disable-next-line
+      return cacheMap.has(svgUrl) ? await cacheMap.get(svgUrl)! : Promise.reject(new Error('Error in fetching the SVG'));
     };
 
     const getDocumentChildrenFrom = (document: string) => {
