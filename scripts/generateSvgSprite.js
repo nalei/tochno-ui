@@ -8,7 +8,7 @@ const readline = require('readline');
 console.log('Script running');
 const ICONS_PATH = 'src-icons';
 const spriter = new SVGSpriter({
-  dest: 'src/common',
+  dest: 'public',
   mode: {
     symbol: {
       dest: '',

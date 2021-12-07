@@ -7682,7 +7682,7 @@ const PARSER_OPTIONS = {
   decodeEntities: false,
   lowerCaseAttributeNames: false
 };
-const ICONS_SPRITE = { sprites: [require("../../common/icons-sprite.svg")] };
+const ICONS_SPRITE = { sprites: [require("/public/icons-sprite.svg")] };
 const cacheMap = new Map();
 const parsedDocuments = new Map();
 const symbolsMap = new Map();

@@ -18,7 +18,7 @@ svg.sui-icon(
     lowerCaseAttributeNames: false,
   } as const;
 
-  const ICONS_SPRITE = { sprites: [require('../../common/icons-sprite.svg')] };
+  const ICONS_SPRITE = { sprites: [require('/public/icons-sprite.svg' || './icons-sprite.svg')] };
   const cacheMap = new Map<string, Promise<string>>();
   const parsedDocuments = new Map<string, Element[]>();
   const symbolsMap = new Map<string, string>();
