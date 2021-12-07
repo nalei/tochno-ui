@@ -1,6 +1,6 @@
 <template lang="pug">
 .h-500 Coming soon
-  Button Coming soon
+  Button(:icon='{ name: "ic24-plus" }') Coming soon
 </template>
 
 <script lang="ts">

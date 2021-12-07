@@ -94,16 +94,19 @@ svg.sui-icon(
     };
 
     const fetchSvg: (svgUrl: string) => Promise<string> = async (svgUrl) => {
-      if (!cacheMap.has(svgUrl)) {
-        try {
-          cacheMap.set(svgUrl, 'caches' in window ? retrieveResponseFromCacheStorage(svgUrl) : fetch(svgUrl).then((r) => r.text()));
-        } catch (e) {
-          cacheMap.delete(svgUrl);
-        }
-      }
+      // if (!cacheMap.has(svgUrl)) {
+      //   try {
+      //     cacheMap.set(svgUrl, 'caches' in window ? retrieveResponseFromCacheStorage(svgUrl) : fetch(svgUrl).then((r) => r.text()));
+      //   } catch (e) {
+      //     cacheMap.delete(svgUrl);
+      //   }
+      // }
+      //
+      // // eslint-disable-next-line
+      // return cacheMap.has(svgUrl) ? await cacheMap.get(svgUrl)! : Promise.reject(new Error('Error in fetching the SVG'));
 
-      // eslint-disable-next-line
-      return cacheMap.has(svgUrl) ? await cacheMap.get(svgUrl)! : Promise.reject(new Error('Error in fetching the SVG'));
+      const svg = await fetch(svgUrl);
+      return svg.text();
     };
 
     const getDocumentChildrenFrom = (document: string) => {

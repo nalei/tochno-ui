@@ -7684,8 +7684,6 @@ const PARSER_OPTIONS = {
   lowerCaseAttributeNames: false
 };
 const ICONS_SPRITE = { sprites: [svgSprite] };
-console.log(ICONS_SPRITE);
-const cacheMap = new Map();
 const parsedDocuments = new Map();
 const symbolsMap = new Map();
 const _sfc_main$y = defineComponent({
@@ -7729,24 +7727,9 @@ const _sfc_main$y = defineComponent({
 function useSvgController() {
   const svgContent = ref("");
   const svgAttrs = ref({});
-  const retrieveResponseFromCacheStorage = async (svgUrl) => {
-    const cache = await caches.open("sui-svg");
-    let cacheRequest = await cache.match(svgUrl);
-    if (!cacheRequest) {
-      await cache.add(svgUrl);
-      cacheRequest = await cache.match(svgUrl);
-    }
-    return cacheRequest ? await cacheRequest.text() : Promise.reject(new Error("SVG not found in the cache storage"));
-  };
   const fetchSvg = async (svgUrl) => {
-    if (!cacheMap.has(svgUrl)) {
-      try {
-        cacheMap.set(svgUrl, "caches" in window ? retrieveResponseFromCacheStorage(svgUrl) : fetch(svgUrl).then((r2) => r2.text()));
-      } catch (e2) {
-        cacheMap.delete(svgUrl);
-      }
-    }
-    return cacheMap.has(svgUrl) ? await cacheMap.get(svgUrl) : Promise.reject(new Error("Error in fetching the SVG"));
+    const svg = await fetch(svgUrl);
+    return svg.text();
   };
   const getDocumentChildrenFrom = (document2) => {
     var _a;
