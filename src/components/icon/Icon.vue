@@ -10,6 +10,7 @@ svg.sui-icon(
   import { defineComponent, computed, ref, watch } from 'vue';
   import { parseDocument, ParserOptions, DomUtils } from 'htmlparser2';
   import { Element } from 'domhandler';
+  import svgSprite from '../../common/icons-sprite.svg';
 
   const PARSER_OPTIONS: ParserOptions = {
     xmlMode: true,
@@ -18,7 +19,7 @@ svg.sui-icon(
     lowerCaseAttributeNames: false,
   } as const;
 
-  const ICONS_SPRITE = { sprites: [require('./icons-sprite.svg')] };
+  const ICONS_SPRITE = { sprites: [svgSprite] };
   const cacheMap = new Map<string, Promise<string>>();
   const parsedDocuments = new Map<string, Element[]>();
   const symbolsMap = new Map<string, string>();
