@@ -1,21 +1,25 @@
 <template lang="pug">
-.modal-wrapper(v-show='opened' @mousedown.self='!strict && closePopup')
-  .popup(:class='popupClasses')
-    .popup-header
-      h4.popup-title.h-500(v-if='title') {{ title }}
-      .popup-close(v-if='!strict' @click.prevent.stop='closePopup')
-        Icon(name='ic24-close-delete')
-    .popup-body.scroll
-      .popup-content
-        slot
-      .popup-footer
-        slot(name='footer')
+  .modal-wrapper(
+    v-if='opened'
+    @mousedown.self='onMousedownHandler'
+    :class='wrapperClasses'
+  )
+    .popup(:class='popupClasses')
+      .popup-header
+        h4.popup-title.h-500(v-if='title') {{ title }}
+        .popup-close(v-if='!strict' @click.prevent.stop='closePopup')
+          Icon(name='ic24-close-delete')
+      .popup-body.scroll
+        .popup-content
+          slot
+        .popup-footer
+          slot(name='footer')
 </template>
 
 <script lang="ts">
-  import { computed, defineComponent, PropType } from 'vue';
-  import Icon from '@/components/icon/Icon.vue';
-  import { PopupSize } from '@/components/modals/Popup';
+  import { computed, defineComponent, PropType, watchEffect } from 'vue';
+  import Icon from '@/components/ui/icon/Icon.vue';
+  import { PopupSize, PopupMode } from '@/components/modals/Popup';
 
   export default defineComponent({
     name: 'Popup',
@@ -44,18 +48,42 @@
           return sizes.includes(value);
         },
       },
+      mode: {
+        type: String as PropType<PopupMode>,
+        default: 'notice',
+        validator: (value: PopupMode) => {
+          return ['notice', 'content'].includes(value);
+        },
+      },
     },
     setup(props, { emit }) {
       const popupClasses = computed(() => ({
         [`${props.size}`]: true,
       }));
 
+      const wrapperClasses = computed(() => {
+        if (props.mode === 'content') {
+          return { content: true };
+        }
+        return { notice: true };
+      });
+
+      watchEffect(() => {
+        if (props.opened) {
+          document.documentElement.style.overflowY = 'hidden';
+        } else {
+          document.documentElement.style.overflowY = 'initial';
+        }
+      });
+
       const closePopup = () => {
         emit('update:opened', false);
         emit('close');
       };
 
-      return { popupClasses, closePopup };
+      const onMousedownHandler = () => !props.strict && closePopup();
+
+      return { popupClasses, wrapperClasses, closePopup, onMousedownHandler };
     },
   });
 </script>
@@ -69,9 +97,42 @@
     bottom: 0;
     background: rgba(1, 1, 1, 0.4);
     z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+    &.notice {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.content {
+      overflow-y: auto;
+
+      .popup {
+        padding: 24px;
+        margin: 24px auto;
+
+        @media screen and (max-width: 767px) {
+          max-height: none;
+        }
+
+        .popup-body {
+          overflow-x: initial;
+
+          &.scroll {
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        &.l {
+          width: 980px;
+        }
+      }
+
+      .popup-header {
+        margin-bottom: 24px;
+      }
+    }
   }
 
   .popup {

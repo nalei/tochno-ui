@@ -19,7 +19,7 @@
 </template>
 
 <script lang="ts">
-  import { computed, defineComponent, onMounted, PropType, ref } from 'vue';
+  import { computed, defineComponent, PropType, ref, watchEffect } from 'vue';
   import { TextareaState } from '@/components/textarea/Textarea';
 
   export default defineComponent({
@@ -88,9 +88,8 @@
         };
       });
 
-      onMounted(() => {
-        if (!textarea.value) return;
-
+      watchEffect(() => {
+        if (!textarea.value?.scrollHeight) return;
         adjustHeight(textarea.value);
       });
 
