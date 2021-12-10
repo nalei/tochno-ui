@@ -31,7 +31,7 @@ declare const _default: import("vue").DefineComponent<{
         validator: (value: string) => boolean;
     };
 }, {
-    imgSrc: import("vue").ComputedRef<any>;
+    imgSrc: import("vue").ComputedRef<string>;
     boxClass: import("vue").ComputedRef<{
         [x: string]: string | boolean | undefined;
         checked: boolean;

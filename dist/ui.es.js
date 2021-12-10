@@ -7966,6 +7966,8 @@ const _sfc_main$v = defineComponent({
   }
 });
 var Card = /* @__PURE__ */ _export_sfc(_sfc_main$v, [["render", render$v], ["__scopeId", "data-v-5bba588c"]]);
+var ic12check = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHZpZXdCb3g9IjAgMCAxMiAxMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjAwMDI1IDEwLjAwMDZDNC43MzYyNSAxMC4wMDA2IDQuNDgxMjUgOS44OTY1NyA0LjI5MzI1IDkuNzA3NTdMMi4yOTMyNSA3LjcwNzU3QzEuOTAyMjUgNy4zMTY1NyAxLjkwMjI1IDYuNjg0NTcgMi4yOTMyNSA2LjI5MzU3QzIuNjg0MjUgNS45MDI1NyAzLjMxNjI1IDUuOTAyNTcgMy43MDcyNSA2LjI5MzU3TDQuODQ1MjUgNy40MzE1N0w4LjE2ODI1IDIuNDQ1NTdDOC40NzQyNSAxLjk4NTU3IDkuMDk0MjUgMS44NjE1NyA5LjU1NTI1IDIuMTY4NTdDMTAuMDE0MiAyLjQ3NTU3IDEwLjEzODMgMy4wOTU1NyA5LjgzMjI1IDMuNTU1NTdMNS44MzIyNSA5LjU1NTU3QzUuNjY2MjUgOS44MDQ1NyA1LjM5NjI1IDkuOTY2NTcgNS4wOTkyNSA5Ljk5NTU3QzUuMDY1MjUgOS45OTg1NyA1LjAzMzI1IDEwLjAwMDYgNS4wMDAyNSAxMC4wMDA2WiIgZmlsbD0iI2ZmZmZmZiIvPgo8L3N2Zz4K";
+var ic16check = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik01LjkxMDA2IDEwLjQ5NTlMMy43MDcxIDguMjkyOTFDMy4zMTY1OCA3LjkwMjM5IDIuNjgzNDIgNy45MDIzOSAyLjI5Mjg5IDguMjkyOTFDMS45MDIzNyA4LjY4MzQzIDEuOTAyMzcgOS4zMTY2IDIuMjkyODkgOS43MDcxMkw1LjI5Mjg4IDEyLjcwNzFDNS43MTY4IDEzLjEzMSA2LjQxNTkgMTMuMDg5MiA2Ljc4NjMgMTIuNjE3OEwxMy43ODYzIDQuNjE3ODZDMTQuMTI3NSA0LjE4MzU5IDE0LjA1MjEgMy41NTQ5NCAxMy42MTc4IDMuMjEzNzJDMTMuMTgzNSAyLjg3MjUxIDEyLjU1NDkgMi45NDc5NSAxMi4yMTM2IDMuMzgyMjJMNS45MTAwNiAxMC40OTU5WiIgZmlsbD0iI2ZmZmZmZiIvPgo8L3N2Zz4K";
 const _hoisted_1$q = ["for"];
 const _hoisted_2$n = ["value", "id", "disabled"];
 const _hoisted_3$l = ["for"];
@@ -8074,8 +8076,7 @@ const _sfc_main$u = defineComponent({
       };
     });
     const imgSrc = computed(() => {
-      const iconSize = props.size === "l" ? "16" : "12";
-      return require(`@/assets/icons/${iconSize}/ic${iconSize}-check.svg`);
+      return props.size === "l" ? ic16check : ic12check;
     });
     const onClick = () => {
       emit("update:modelValue", !props.modelValue);
