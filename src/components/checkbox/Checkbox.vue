@@ -27,6 +27,8 @@
 <script lang="ts">
   import { computed, defineComponent, PropType } from 'vue';
   import { CheckboxSize } from '@/components/checkbox/Checkbox';
+  import ic12check from '@/assets/icons/ic12-check.svg';
+  import ic16check from '@/assets/icons/ic16-check.svg';
 
   export default defineComponent({
     name: 'Checkbox',
@@ -64,6 +66,7 @@
       },
     },
     setup(props, { emit }) {
+      /* eslint-disable */
       const boxClass = computed(() => {
         return {
           [`${props.size}`]: true,
@@ -93,8 +96,7 @@
       });
 
       const imgSrc = computed(() => {
-        const iconSize = props.size === 'l' ? '16' : '12';
-        return require(`@/assets/icons/${iconSize}/ic${iconSize}-check.svg`);
+        return props.size === 'l' ? ic16check : ic12check;
       });
 
       const onClick = () => {

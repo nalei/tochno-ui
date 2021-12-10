@@ -86,6 +86,10 @@ const routes: Array<RouteRecordRaw> = [
       },
     ],
   },
+  {
+    path: '/:catchAll(.*)',
+    component: () => import(/* webpackChunkName: "404" */ '../views/not-found.vue'),
+  },
 ];
 
 const router = createRouter({
