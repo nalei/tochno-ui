@@ -2,7 +2,10 @@
 
 Tochno UI - A Vue.js 3 UI library made by [Tochno](https://tochno.pro/)
 
+[![npm Version](https://img.shields.io/npm/v/@tochno/ui)](https://img.shields.io/npm/v/@tochno/ui)
+[![npm Downloads](https://img.shields.io/npm/dw/@tochno/ui)](https://img.shields.io/npm/dw/@tochno/ui)
 [![Build Status](https://app.travis-ci.com/somersetinc/manage-web-ui.svg?token=ufjvYfS73fhVZjXzGXAn&branch=main)](https://app.travis-ci.com/somersetinc/manage-web-ui)
+[![License](https://img.shields.io/npm/l/@tochno/ui)](https://img.shields.io/npm/l/@tochno/ui)
 
 ## Installation
 
