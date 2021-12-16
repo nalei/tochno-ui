@@ -29,7 +29,7 @@
       )
         td.table__data.table__data--checkbox.fit(v-if='withSelect')
           .table__data-content
-            .table-control-button(@click.stop.prevent='row.checked = !row.checked')
+            .table-control-button(@click.stop.prevent='toggleCheckbox(row)')
               Checkbox(v-model='row.checked' :id='`selection-checkbox-${rowIdx}`')
 
         td.table__data(
@@ -58,7 +58,7 @@
     name: 'Table',
     components: { Icon, Checkbox },
     directives: { Tooltip },
-    emits: ['rowClick'],
+    emits: ['rowClick', 'select'],
     props: {
       keyField: {
         type: String, //Unique field row name for correct key attr work
@@ -84,10 +84,15 @@
         default: false,
       },
     },
-    setup(props) {
+    setup(props, { emit }) {
       const rows = computed<TableRow[]>(() => {
         return props.dataSource.pageData;
       });
+
+      const toggleCheckbox = (row: TableRow) => {
+        row.checked = !row.checked;
+        emit('select');
+      };
 
       const toggleAllOnPage = () => {
         if (props.dataSource.areAllSelected) {
@@ -95,6 +100,7 @@
         } else {
           props.dataSource.selectAll();
         }
+        emit('select');
       };
 
       const getColumnStyle = (column: TableColumn): string => {
@@ -110,7 +116,7 @@
         }
       };
 
-      return { rows, toggleAllOnPage, getColumnStyle };
+      return { rows, toggleAllOnPage, getColumnStyle, toggleCheckbox };
     },
   });
 </script>

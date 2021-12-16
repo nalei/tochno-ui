@@ -1,5 +1,9 @@
 <template lang="pug">
-.dropdown(v-show='opened' :style='dropdownStyles')
+.dropdown(
+  v-show='opened'
+  :style='dropdownStyles'
+  :class='{ "dropdown_open-top": openOnTop }'
+)
   slot(name='header')
   ul.options(v-if='!noResults')
     DropdownOption(
@@ -66,6 +70,10 @@
       dictionary: {
         type: Object as PropType<Partial<DropdownDictionary>>,
         default: () => ({}),
+      },
+      openOnTop: {
+        type: Boolean,
+        default: false,
       },
     },
     setup(props, { emit }) {
@@ -141,6 +149,10 @@
     }
     &::-webkit-scrollbar-corner {
       background-color: transparent;
+    }
+
+    &_open-top {
+      bottom: 46px;
     }
   }
   .no-results {
