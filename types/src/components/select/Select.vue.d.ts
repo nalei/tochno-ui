@@ -107,10 +107,10 @@ declare const _default: import("vue").DefineComponent<{
     active: DropdownOptionProps<unknown> | null;
     options: DropdownOptionProps<unknown>[];
     maxHeight: string;
+    openOnTop: boolean;
     placeholder: string;
     invalid: boolean;
     searchable: boolean;
-    openOnTop: boolean;
 } & {}> & {
     "onUpdate:active"?: ((...args: any[]) => any) | undefined;
     onSelect?: ((...args: any[]) => any) | undefined;
@@ -124,9 +124,9 @@ declare const _default: import("vue").DefineComponent<{
     active: DropdownOptionProps<unknown> | null;
     options: DropdownOptionProps<unknown>[];
     maxHeight: string;
+    openOnTop: boolean;
     placeholder: string;
     invalid: boolean;
     searchable: boolean;
-    openOnTop: boolean;
 }>;
 export default _default;

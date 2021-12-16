@@ -8174,7 +8174,7 @@ function render$s(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_DropdownOption = resolveComponent("DropdownOption");
   const _component_Icon = resolveComponent("Icon");
   return withDirectives((openBlock(), createElementBlock("div", {
-    class: "dropdown",
+    class: normalizeClass(["dropdown", { "dropdown_open-top": _ctx.openOnTop }]),
     style: normalizeStyle(_ctx.dropdownStyles)
   }, [
     renderSlot(_ctx.$slots, "header", {}, void 0, true),
@@ -8208,7 +8208,7 @@ function render$s(_ctx, _cache, $props, $setup, $data, $options) {
     ], 512)), [
       [vShow, _ctx.opened]
     ])
-  ], 4)), [
+  ], 6)), [
     [vShow, _ctx.opened]
   ]);
 }
@@ -8248,6 +8248,10 @@ const _sfc_main$s = defineComponent({
     dictionary: {
       type: Object,
       default: () => ({})
+    },
+    openOnTop: {
+      type: Boolean,
+      default: false
     }
   },
   setup(props, { emit }) {
@@ -8272,7 +8276,7 @@ const _sfc_main$s = defineComponent({
     };
   }
 });
-var Dropdown = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", render$s], ["__scopeId", "data-v-3170e559"]]);
+var Dropdown = /* @__PURE__ */ _export_sfc(_sfc_main$s, [["render", render$s], ["__scopeId", "data-v-32dbd45f"]]);
 const _hoisted_1$n = { class: "file-wrapper" };
 const _hoisted_2$k = ["disabled"];
 const _hoisted_3$i = {
@@ -12345,7 +12349,7 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
               createElementVNode("div", _hoisted_15, [
                 createElementVNode("div", {
                   class: "table-control-button",
-                  onClick: withModifiers(($event) => row.checked = !row.checked, ["stop", "prevent"])
+                  onClick: withModifiers(($event) => _ctx.toggleCheckbox(row), ["stop", "prevent"])
                 }, [
                   createVNode(_component_Checkbox, {
                     modelValue: row.checked,
@@ -12381,7 +12385,7 @@ const _sfc_main$3 = defineComponent({
   name: "Table",
   components: { Icon, Checkbox },
   directives: { Tooltip: tooltipDirective },
-  emits: ["rowClick"],
+  emits: ["rowClick", "select"],
   props: {
     keyField: {
       type: String
@@ -12407,16 +12411,21 @@ const _sfc_main$3 = defineComponent({
       default: false
     }
   },
-  setup(props) {
+  setup(props, { emit }) {
     const rows = computed(() => {
       return props.dataSource.pageData;
     });
+    const toggleCheckbox = (row) => {
+      row.checked = !row.checked;
+      emit("select");
+    };
     const toggleAllOnPage = () => {
       if (props.dataSource.areAllSelected) {
         props.dataSource.unSelectAll();
       } else {
         props.dataSource.selectAll();
       }
+      emit("select");
     };
     const getColumnStyle = (column) => {
       const fillingColumns = props.columns.filter(({ columnBehavior }) => columnBehavior === "fill").length;
@@ -12429,10 +12438,10 @@ const _sfc_main$3 = defineComponent({
           return "";
       }
     };
-    return { rows, toggleAllOnPage, getColumnStyle };
+    return { rows, toggleAllOnPage, getColumnStyle, toggleCheckbox };
   }
 });
-var Table = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3], ["__scopeId", "data-v-57f1a4fc"]]);
+var Table = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3], ["__scopeId", "data-v-01b97633"]]);
 const _hoisted_1$1 = { class: "tabs-wrapper" };
 const _hoisted_2$1 = {
   class: "tabs",

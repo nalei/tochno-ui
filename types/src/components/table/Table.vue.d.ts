@@ -29,7 +29,8 @@ declare const _default: import("vue").DefineComponent<{
     rows: import("vue").ComputedRef<TableRow[]>;
     toggleAllOnPage: () => void;
     getColumnStyle: (column: TableColumn) => string;
-}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, "rowClick"[], "rowClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
+    toggleCheckbox: (row: TableRow) => void;
+}, unknown, {}, {}, import("vue").ComponentOptionsMixin, import("vue").ComponentOptionsMixin, ("select" | "rowClick")[], "select" | "rowClick", import("vue").VNodeProps & import("vue").AllowedComponentProps & import("vue").ComponentCustomProps, Readonly<{
     keyField?: unknown;
     dataSource?: unknown;
     columns?: unknown;
@@ -45,6 +46,7 @@ declare const _default: import("vue").DefineComponent<{
 } & {
     keyField?: string | undefined;
 }> & {
+    onSelect?: ((...args: any[]) => any) | undefined;
     onRowClick?: ((...args: any[]) => any) | undefined;
 }, {
     dataSource: TableDataSource<TableRow>;

@@ -6,6 +6,7 @@ export declare interface DropdownProps {
   options?: DropdownOptionProps[];
   maxHeight?: string;
   noResults?: boolean;
+  openOnTop?: boolean;
 }
 
 export declare interface DropdownDictionary {

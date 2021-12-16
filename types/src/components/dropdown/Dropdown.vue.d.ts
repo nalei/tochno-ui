@@ -26,6 +26,10 @@ declare const _default: import("vue").DefineComponent<{
         type: PropType<Partial<DropdownDictionary>>;
         default: () => {};
     };
+    openOnTop: {
+        type: BooleanConstructor;
+        default: boolean;
+    };
 }, {
     dropdownDictionary: import("vue").ComputedRef<DropdownDictionary>;
     dropdownStyles: import("vue").ComputedRef<{
@@ -40,6 +44,7 @@ declare const _default: import("vue").DefineComponent<{
     maxHeight?: unknown;
     noResults?: unknown;
     dictionary?: unknown;
+    openOnTop?: unknown;
 } & {
     opened: boolean;
     active: DropdownOptionProps<unknown> | null;
@@ -47,6 +52,7 @@ declare const _default: import("vue").DefineComponent<{
     maxHeight: string;
     noResults: boolean;
     dictionary: Partial<DropdownDictionary>;
+    openOnTop: boolean;
 } & {}> & {
     onChange?: ((...args: any[]) => any) | undefined;
     "onUpdate:opened"?: ((...args: any[]) => any) | undefined;
@@ -57,5 +63,6 @@ declare const _default: import("vue").DefineComponent<{
     maxHeight: string;
     noResults: boolean;
     dictionary: Partial<DropdownDictionary>;
+    openOnTop: boolean;
 }>;
 export default _default;
