@@ -66,7 +66,6 @@
       },
     },
     setup(props, { emit }) {
-      /* eslint-disable */
       const boxClass = computed(() => {
         return {
           [`${props.size}`]: true,

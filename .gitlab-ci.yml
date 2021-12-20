@@ -1,0 +1,17 @@
+image: node:14
+
+cache:
+  paths:
+    - node_modules/
+
+Documentation:
+  stage: deploy
+  environment: producton
+  only:
+    - main
+  script:
+    - yarn install
+    - yarn build
+    - yarn global add firebase-tools
+    - firebase use --token $FIREBASE_DEPLOY_KEY tochno-ui
+    - firebase deploy -m "$CI_COMMIT_REF_NAME, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
