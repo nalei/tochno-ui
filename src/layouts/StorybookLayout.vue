@@ -4,8 +4,9 @@ PageShell
     PageSidebar
       template(#header)
         .brand
-          img(src='@/assets/somerset.jpeg' height='40')
-          span.h-500 Tochno
+          .brand-icon
+            img(src='@/assets/somerset.jpeg' height='40')
+          span.h-500 Tochno UI
       MenuList.sidebar-menu(:options='storybookMenu' :mode='screenMode')
   .content-wrapper
     slot
@@ -65,34 +66,37 @@ PageShell
           },
           {
             label: 'Form elements',
-            active: ['buttons', 'checkboxes', 'inputs', 'textareas', 'selects'].includes(
-              String(route.name)
-            ),
+            active: ['button', 'checkbox', 'input', 'select', 'textarea', 'toggle'].includes(String(route.name)),
             children: [
               {
-                label: 'Buttons',
-                href: '/buttons',
-                active: route.name === 'buttons',
+                label: 'Button',
+                href: '/button',
+                active: route.name === 'button',
               },
               {
-                label: 'Checkboxes',
-                href: '/checkboxes',
-                active: route.name === 'checkboxes',
+                label: 'Checkbox',
+                href: '/checkbox',
+                active: route.name === 'checkbox',
               },
               {
-                label: 'Inputs',
-                href: '/inputs',
-                active: route.name === 'inputs',
+                label: 'Input',
+                href: '/input',
+                active: route.name === 'input',
               },
               {
-                label: 'Textareas',
-                href: '/textareas',
-                active: route.name === 'textareas',
+                label: 'Select',
+                href: '/select',
+                active: route.name === 'select',
               },
               {
-                label: 'Selects',
-                href: '/selects',
-                active: route.name === 'selects',
+                label: 'Textarea',
+                href: '/textarea',
+                active: route.name === 'textarea',
+              },
+              {
+                label: 'Toggle',
+                href: '/toggle',
+                active: route.name === 'toggle',
               },
             ],
           },
@@ -144,12 +148,34 @@ PageShell
     align-items: center;
     flex-grow: 1;
     overflow: hidden;
-    img {
-      margin-right: 16px;
-    }
+
     span {
       padding-top: 4px;
       font-weight: 600;
+    }
+  }
+
+  .brand-icon {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    height: 40px;
+    width: 40px;
+    min-width: 40px;
+    line-height: 40px;
+    white-space: nowrap;
+    margin: 0 12px 0 4px;
+
+    &:after {
+      box-shadow: inset 0 0 0 1px var(--gray-300);
+      border-radius: 3px;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
   }
 </style>
