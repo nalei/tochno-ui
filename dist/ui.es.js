@@ -7908,7 +7908,7 @@ const _hoisted_1$r = {
 const _hoisted_2$o = { class: "step-number h-500" };
 const _hoisted_3$m = { class: "card-content" };
 const _hoisted_4$h = { class: "card-header" };
-const _hoisted_5$e = {
+const _hoisted_5$d = {
   key: 0,
   class: "card-title h-500"
 };
@@ -7923,7 +7923,7 @@ function render$v(_ctx, _cache, $props, $setup, $data, $options) {
     ])) : createCommentVNode("", true),
     createElementVNode("div", _hoisted_3$m, [
       createElementVNode("div", _hoisted_4$h, [
-        _ctx.title ? (openBlock(), createElementBlock("div", _hoisted_5$e, toDisplayString(_ctx.title), 1)) : createCommentVNode("", true),
+        _ctx.title ? (openBlock(), createElementBlock("div", _hoisted_5$d, toDisplayString(_ctx.title), 1)) : createCommentVNode("", true),
         createElementVNode("div", _hoisted_6$3, [
           renderSlot(_ctx.$slots, "actions", {}, void 0, true)
         ]),
@@ -7972,7 +7972,7 @@ const _hoisted_1$q = ["for"];
 const _hoisted_2$n = ["value", "id", "disabled"];
 const _hoisted_3$l = ["for"];
 const _hoisted_4$g = ["src"];
-const _hoisted_5$d = { class: "indeterminate-dash" };
+const _hoisted_5$c = { class: "indeterminate-dash" };
 function render$u(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("div", {
     class: normalizeClass(["checkbox", _ctx.boxClass])
@@ -8003,7 +8003,7 @@ function render$u(_ctx, _cache, $props, $setup, $data, $options) {
       }, null, 8, _hoisted_4$g), [
         [vShow, !_ctx.indeterminate && _ctx.modelValue]
       ]),
-      withDirectives(createElementVNode("div", _hoisted_5$d, null, 512), [
+      withDirectives(createElementVNode("div", _hoisted_5$c, null, 512), [
         [vShow, _ctx.indeterminate]
       ])
     ], 10, _hoisted_3$l),
@@ -8096,7 +8096,7 @@ const _hoisted_1$p = ["tabindex"];
 const _hoisted_2$m = { class: "option-content" };
 const _hoisted_3$k = { class: "option-label" };
 const _hoisted_4$f = /* @__PURE__ */ _withScopeId$3(() => /* @__PURE__ */ createElementVNode("div", { class: "break" }, null, -1));
-const _hoisted_5$c = {
+const _hoisted_5$b = {
   key: 1,
   class: "option-subtitle caption-10px-medium"
 };
@@ -8113,7 +8113,7 @@ function render$t(_ctx, _cache, $props, $setup, $data, $options) {
       }, _ctx.icon), null, 16)) : createCommentVNode("", true),
       createElementVNode("span", _hoisted_3$k, toDisplayString(_ctx.label), 1),
       _hoisted_4$f,
-      _ctx.subtitle ? (openBlock(), createElementBlock("small", _hoisted_5$c, toDisplayString(_ctx.subtitle), 1)) : createCommentVNode("", true)
+      _ctx.subtitle ? (openBlock(), createElementBlock("small", _hoisted_5$b, toDisplayString(_ctx.subtitle), 1)) : createCommentVNode("", true)
     ]),
     renderSlot(_ctx.$slots, "control", {}, void 0, true)
   ], 10, _hoisted_1$p);
@@ -8213,7 +8213,7 @@ function render$s(_ctx, _cache, $props, $setup, $data, $options) {
   ]);
 }
 var Dropdown_vue_vue_type_style_index_0_scoped_true_lang = "";
-const DEFAULT_DICTIONARY$1 = {
+const DEFAULT_DICTIONARY$2 = {
   noResultsTitle: "No matching search results",
   noResultsDescription: "Try again using more general search terms"
 };
@@ -8255,7 +8255,7 @@ const _sfc_main$s = defineComponent({
     }
   },
   setup(props, { emit }) {
-    const dropdownDictionary = computed(() => __spreadValues(__spreadValues({}, DEFAULT_DICTIONARY$1), props.dictionary));
+    const dropdownDictionary = computed(() => __spreadValues(__spreadValues({}, DEFAULT_DICTIONARY$2), props.dictionary));
     const dropdownStyles = computed(() => ({
       "--dropdown-max-height": props.maxHeight
     }));
@@ -8287,7 +8287,6 @@ const _hoisted_4$d = {
   key: 1,
   class: "file-label text-13px-medium"
 };
-const _hoisted_5$b = /* @__PURE__ */ createTextVNode("\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C");
 function render$r(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Icon = resolveComponent("Icon");
   return openBlock(), createElementBlock("label", _hoisted_1$n, [
@@ -8301,11 +8300,19 @@ function render$r(_ctx, _cache, $props, $setup, $data, $options) {
       createTextVNode(toDisplayString(_ctx.name), 1)
     ])) : (openBlock(), createElementBlock("div", _hoisted_4$d, [
       createVNode(_component_Icon, { name: "ic24-file-import" }),
-      _hoisted_5$b
+      createTextVNode(toDisplayString(_ctx.fileUploadDictionary.download), 1)
     ]))
   ]);
 }
 var FileUpload_vue_vue_type_style_index_0_scoped_true_lang = "";
+const DEFAULT_DICTIONARY$1 = {
+  maximumFileSize: "\u0420\u0430\u0437\u043C\u0435\u0440 \u0444\u0430\u0439\u043B\u0430 \u043D\u0435 \u0434\u043E\u043B\u0436\u0435\u043D \u043F\u0440\u0435\u0432\u044B\u0448\u0430\u0442\u044C",
+  mb: "\u043C\u0435\u0433\u0430\u0431\u0430\u0439\u0442",
+  invalidFileType: "\u041D\u0435 \u0434\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u044B\u0439 \u0442\u0438\u043F \u0444\u0430\u0439\u043B\u0430",
+  validTypes: "\u0414\u043E\u043F\u0443\u0441\u0442\u0438\u043C\u044B\u0435 \u0442\u0438\u043F\u044B",
+  file: "\u0424\u0430\u0439\u043B",
+  download: "\u0417\u0430\u0433\u0440\u0443\u0437\u0438\u0442\u044C"
+};
 const _sfc_main$r = defineComponent({
   name: "FileUpload",
   components: { Icon },
@@ -8317,10 +8324,23 @@ const _sfc_main$r = defineComponent({
     disabled: {
       type: Boolean,
       default: false
+    },
+    maxSize: {
+      type: Number,
+      default: 0
+    },
+    availableTypes: {
+      type: Array,
+      default: () => []
+    },
+    dictionary: {
+      type: Object,
+      default: () => ({})
     }
   },
-  emits: ["change"],
+  emits: ["change", "error"],
   setup(props, { emit }) {
+    const fileUploadDictionary = computed(() => __spreadValues(__spreadValues({}, DEFAULT_DICTIONARY$1), props.dictionary));
     const file = ref(null);
     const name = computed(() => {
       if (props.fileName) {
@@ -8329,12 +8349,23 @@ const _sfc_main$r = defineComponent({
       if (file.value) {
         return file.value.name;
       }
-      return "\u0424\u0430\u0439\u043B";
+      return fileUploadDictionary.value.file;
     });
+    const onClick = (e2) => {
+      e2.target.value = "";
+    };
     const onChangeFile = (e2) => {
       var _a;
       const files = (_a = e2 == null ? void 0 : e2.target) == null ? void 0 : _a.files;
       if (!(files == null ? void 0 : files.length)) {
+        return;
+      }
+      if (props.maxSize !== 0 && +(files[0].size / 1e6).toFixed(2) > props.maxSize) {
+        emit("error", `${fileUploadDictionary.value.maximumFileSize} ${props.maxSize} ${fileUploadDictionary.value.mb}.`);
+        return;
+      }
+      if (props.availableTypes.length && !props.availableTypes.includes(files[0].type.split("/")[1])) {
+        emit("error", `${fileUploadDictionary.value.invalidFileType}. ${fileUploadDictionary.value.validTypes} - ${props.availableTypes.join(", ")}.`);
         return;
       }
       file.value = files[0];
@@ -8343,11 +8374,13 @@ const _sfc_main$r = defineComponent({
     return {
       file,
       name,
-      onChangeFile
+      onChangeFile,
+      onClick,
+      fileUploadDictionary
     };
   }
 });
-var FileUpload = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", render$r], ["__scopeId", "data-v-a39a15b0"]]);
+var FileUpload = /* @__PURE__ */ _export_sfc(_sfc_main$r, [["render", render$r], ["__scopeId", "data-v-5aa6b520"]]);
 const _hoisted_1$m = { class: "sticky-wrapper" };
 const _hoisted_2$j = { class: "filters" };
 function render$q(_ctx, _cache, $props, $setup, $data, $options) {
@@ -9598,7 +9631,7 @@ const _sfc_main$d = defineComponent({
         case MessageType.Warning:
           return {
             name: "ic24-warning",
-            color: "--yellow-100"
+            color: "--yellow-500"
           };
         case MessageType.Info:
           return {
@@ -9608,7 +9641,7 @@ const _sfc_main$d = defineComponent({
         case MessageType.Success:
           return {
             name: "ic24-success",
-            color: "--green-100"
+            color: "--green-500"
           };
       }
     };
@@ -9629,7 +9662,7 @@ const _sfc_main$d = defineComponent({
     return { messages: messages2, getColor, getIconProps, deleteMessage, pauseHold, resumeHold };
   }
 });
-var Messenger = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", render$d], ["__scopeId", "data-v-7a14cced"]]);
+var Messenger = /* @__PURE__ */ _export_sfc(_sfc_main$d, [["render", render$d], ["__scopeId", "data-v-7290fded"]]);
 const _hoisted_1$a = { class: "popup-header" };
 const _hoisted_2$9 = {
   key: 0,
