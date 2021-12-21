@@ -56,7 +56,7 @@
           case MessageType.Warning:
             return {
               name: 'ic24-warning',
-              color: '--yellow-100',
+              color: '--yellow-500',
             };
           case MessageType.Info:
             return {
@@ -66,7 +66,7 @@
           case MessageType.Success:
             return {
               name: 'ic24-success',
-              color: '--green-100',
+              color: '--green-500',
             };
         }
       };
@@ -163,11 +163,11 @@
     }
 
     &.yellow {
-      border-color: var(--yellow-100);
+      border-color: var(--yellow-500);
     }
 
     &.green {
-      border-color: var(--green-100);
+      border-color: var(--green-500);
     }
 
     &.red {

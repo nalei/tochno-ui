@@ -15,7 +15,7 @@
 
   export default defineComponent({
     setup() {
-      const colors = ['Gray', 'Blue', 'Red'];
+      const colors = ['Gray', 'Blue', 'Red', 'Green', 'Yellow'];
       const cssCustomProps = ref<[string, string][]>([]);
 
       onMounted(() => {

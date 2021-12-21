@@ -17,9 +17,9 @@
 
   --red-500: #ff0000;
 
-  --green-100: rgba(18, 184, 134, 1);
+  --green-500: #12b886;
 
-  --yellow-100: rgba(255, 212, 59, 1);
+  --yellow-500: #ffd43b;
 
   --black: #000000;
 
@@ -38,13 +38,6 @@
 
   /** TRANSITION **/
   --transition: 0.2s ease;
-
-  /* tasks statuses colors */
-  --task-out-tech-flow: var(--gray-900); /* black */
-  --task-in-tech-flow: var(--blue-500); /* blue */
-  --task-action-waiting: #dea000; /* orange */
-  --task-action-required: var(--red-500); /* red */
-  --task-completed: #00af07; /* green */
 }
 
 /** HEADING **/
