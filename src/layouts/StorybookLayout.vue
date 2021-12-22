@@ -143,6 +143,10 @@ PageShell
     padding: 16px 24px;
   }
 
+  .sidebar-menu {
+    margin-bottom: 17px;
+  }
+
   .brand {
     display: flex;
     align-items: center;
@@ -169,7 +173,7 @@ PageShell
     &:after {
       box-shadow: inset 0 0 0 1px var(--gray-300);
       border-radius: 3px;
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       top: 0;
