@@ -6,7 +6,7 @@
         th.table__head.table__head--checkbox.fit(v-if='withSelect')
           .table__head-data
             .table-control-button(@click.stop.prevent='toggleAllOnPage')
-              Checkbox#selection-checkbox-head(v-model='dataSource.areAllSelected')
+              Checkbox#selection-head-checkbox(:modelValue='dataSource.areAllSelected' :indeterminate='headCheckboxIndeterminate')
 
         th.table__head.text-14px-medium(
           v-for='column of columns'
@@ -89,6 +89,10 @@
         return props.dataSource.pageData;
       });
 
+      const headCheckboxIndeterminate = computed<boolean>(() => {
+        return !props.dataSource.areAllSelected && !!props.dataSource.selectedItems.length;
+      });
+
       const toggleCheckbox = (row: TableRow) => {
         row.checked = !row.checked;
         emit('select');
@@ -116,7 +120,7 @@
         }
       };
 
-      return { rows, toggleAllOnPage, getColumnStyle, toggleCheckbox };
+      return { rows, headCheckboxIndeterminate, toggleAllOnPage, getColumnStyle, toggleCheckbox };
     },
   });
 </script>
