@@ -1,7 +1,15 @@
 <template lang="pug">
+Messenger
 .global-wrapper
   router-view
 </template>
+
+<script>
+  import Messenger from '@/components/messenger/Messenger';
+  export default {
+    components: { Messenger },
+  };
+</script>
 
 <style>
   @import './common/common.css';

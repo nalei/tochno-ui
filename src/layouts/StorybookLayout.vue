@@ -94,6 +94,11 @@ PageShell
                 active: route.name === 'textarea',
               },
               {
+                label: 'File upload',
+                href: '/file-upload',
+                active: route.name === 'file-upload',
+              },
+              {
                 label: 'Toggle',
                 href: '/toggle',
                 active: route.name === 'toggle',
@@ -109,6 +114,11 @@ PageShell
             label: 'Grid system',
             href: '/grid-system',
             active: route.name === 'grid-system',
+          },
+          {
+            label: 'Notification',
+            href: '/notification',
+            active: route.name === 'notification',
           },
           {
             label: 'Pagination',
