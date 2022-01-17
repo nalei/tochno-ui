@@ -65,9 +65,19 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import(/* webpackChunkName: "storybook" */ '../views/breadcrumbs.vue'),
       },
       {
+        path: 'file-upload',
+        name: 'file-upload',
+        component: () => import(/* webpackChunkName: "storybook" */ '../views/form-elements/file-upload.vue'),
+      },
+      {
         path: 'grid-system',
         name: 'grid-system',
         component: () => import(/* webpackChunkName: "storybook" */ '../views/grid-system.vue'),
+      },
+      {
+        path: 'notification',
+        name: 'notification',
+        component: () => import(/* webpackChunkName: "storybook" */ '../views/notification.vue'),
       },
       {
         path: 'pagination',

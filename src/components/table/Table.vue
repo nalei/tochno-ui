@@ -99,7 +99,7 @@
       };
 
       const toggleAllOnPage = () => {
-        if (props.dataSource.areAllSelected) {
+        if (props.dataSource.areAllSelected || headCheckboxIndeterminate.value ) {
           props.dataSource.unSelectAll();
         } else {
           props.dataSource.selectAll();
