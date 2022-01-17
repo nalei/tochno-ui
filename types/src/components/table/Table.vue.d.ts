@@ -27,6 +27,7 @@ declare const _default: import("vue").DefineComponent<{
     };
 }, {
     rows: import("vue").ComputedRef<TableRow[]>;
+    headCheckboxIndeterminate: import("vue").ComputedRef<boolean>;
     toggleAllOnPage: () => void;
     getColumnStyle: (column: TableColumn) => string;
     toggleCheckbox: (row: TableRow) => void;

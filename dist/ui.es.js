@@ -12340,13 +12340,13 @@ function render$3(_ctx, _cache, $props, $setup, $data, $options) {
             createElementVNode("div", _hoisted_6, [
               createElementVNode("div", {
                 class: "table-control-button",
-                onClick: _cache[1] || (_cache[1] = withModifiers((...args) => _ctx.toggleAllOnPage && _ctx.toggleAllOnPage(...args), ["stop", "prevent"]))
+                onClick: _cache[0] || (_cache[0] = withModifiers((...args) => _ctx.toggleAllOnPage && _ctx.toggleAllOnPage(...args), ["stop", "prevent"]))
               }, [
                 createVNode(_component_Checkbox, {
-                  id: "selection-checkbox-head",
+                  id: "selection-head-checkbox",
                   modelValue: _ctx.dataSource.areAllSelected,
-                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => _ctx.dataSource.areAllSelected = $event)
-                }, null, 8, ["modelValue"])
+                  indeterminate: _ctx.headCheckboxIndeterminate
+                }, null, 8, ["modelValue", "indeterminate"])
               ])
             ])
           ])) : createCommentVNode("", true),
@@ -12448,12 +12448,15 @@ const _sfc_main$3 = defineComponent({
     const rows = computed(() => {
       return props.dataSource.pageData;
     });
+    const headCheckboxIndeterminate = computed(() => {
+      return !props.dataSource.areAllSelected && !!props.dataSource.selectedItems.length;
+    });
     const toggleCheckbox = (row) => {
       row.checked = !row.checked;
       emit("select");
     };
     const toggleAllOnPage = () => {
-      if (props.dataSource.areAllSelected) {
+      if (props.dataSource.areAllSelected || headCheckboxIndeterminate.value) {
         props.dataSource.unSelectAll();
       } else {
         props.dataSource.selectAll();
@@ -12471,10 +12474,10 @@ const _sfc_main$3 = defineComponent({
           return "";
       }
     };
-    return { rows, toggleAllOnPage, getColumnStyle, toggleCheckbox };
+    return { rows, headCheckboxIndeterminate, toggleAllOnPage, getColumnStyle, toggleCheckbox };
   }
 });
-var Table = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3], ["__scopeId", "data-v-01b97633"]]);
+var Table = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", render$3], ["__scopeId", "data-v-4f053010"]]);
 const _hoisted_1$1 = { class: "tabs-wrapper" };
 const _hoisted_2$1 = {
   class: "tabs",
