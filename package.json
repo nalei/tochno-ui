@@ -73,6 +73,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.com:somersetinc/manage-web-ui.git"
+    "url": "git@github.com:nalei/tochno-ui.git"
   }
 }
