@@ -33,6 +33,7 @@ import ProgressBar from './progress-bar/ProgressBar.vue';
 import { useProgressBar } from './progress-bar/use/progressBar';
 import Select from './select/Select.vue';
 import Table from './table/Table.vue';
+import Toggle from './toggle/Toggle.vue';
 import { TableDataSource } from './table/use/TableDataSource';
 import Tabs from './tabs/Tabs.vue';
 import Textarea from './textarea/Textarea.vue';
@@ -74,6 +75,7 @@ export {
   useProgressBar,
   Select,
   Table,
+  Toggle,
   TableDataSource,
   Tabs,
   Textarea,
