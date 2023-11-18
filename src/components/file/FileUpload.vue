@@ -83,11 +83,10 @@ label.file-wrapper
         if (!files?.length) {
           return;
         }
-        if (props.maxSize !== 0 && +(files[0].size / 1_000_000).toFixed(2) > props.maxSize) {
+        if (props.maxSize !== 0 && +(files[0].size / 1000000).toFixed(2) > props.maxSize) {
           emit('error', `${fileUploadDictionary.value.maximumFileSize} ${props.maxSize} ${fileUploadDictionary.value.mb}.`);
           return;
         }
-
         if (props.availableTypes.length && !props.availableTypes.includes(files[0].type.split('/')[1])) {
           emit('error', `${fileUploadDictionary.value.invalidFileType}. ${fileUploadDictionary.value.validTypes} - ${props.availableTypes.join(', ')}.`);
           return;
